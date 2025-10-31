@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/style.css">
+  <title>포트폴리오</title>
+
+  <!-- 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <nav class="nav">
+      <div class="nav-links">
+        <a class="btn-outline" href="index.html" aria-current="page">리스트</a>
+        <a class="btn-outline" href="intro.html">소개</a>
+      </div>
+      <div class="nav-tools">
+        <div class="tool-item">
+          <label for="filter-category">카테고리</label>
+          <select id="filter-category" class="perf-select" aria-label="카테고리"></select>
+        </div>
+        <div class="tool-item">
+          <label for="search">검색</label>
+          <input id="search" class="perf-select" type="search" placeholder="제목, 태그..." />
+        </div>
+        <div class="tool-item">
+          <label for="visible-limit">표시</label>
+          <input id="visible-limit" class="perf-select" type="number" min="1" max="60" step="1" value="6" />
+        </div>
+        <div class="tool-item">
+          <label for="perf-mode">성능</label>
+          <select id="perf-mode" class="perf-select" aria-label="성능 모드">
+            <option value="auto">자동</option>
+            <option value="high">고사양</option>
+            <option value="low">저사양</option>
+          </select>
+          <span id="perf-badge" class="perf-badge" aria-live="polite"></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="portfolio list-view">
+    <ul id="project-list" class="list"></ul>
+    <div id="empty" class="empty hidden">결과가 없습니다.</div>
+  </main>
+
+  <!-- 프로젝트 상세 모달 -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content" role="document">
+      <button id="modal-close" class="icon-btn" aria-label="닫기">✕</button>
+      <div class="modal-body">
+        <div class="modal-cover" id="modal-cover"></div>
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+          <p id="modal-desc"></p>
+          <div id="modal-tags" class="tag-list"></div>
+          <div id="modal-links" class="link-list"></div>
+
+          <!-- 제작자 섹션 추가 -->
+          <div class="authors-wrap">
+            <div id="authors-summary" class="authors-summary"></div>
+            <div id="authors-full" class="author-list hidden"></div>
+            <button id="authors-toggle" class="btn-outline small" type="button" aria-expanded="false" aria-controls="authors-full">제작자 전체 보기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /프로젝트 상세 모달 -->
+
+  <footer class="footer">
+    <span>© 2025 Portfolio</span>
+  </footer>
+
+  <script src="./scripts/scripts.js" defer></script>
+</body>
+
+</html>

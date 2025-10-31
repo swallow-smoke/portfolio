@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tunnel Us Map</title>
+  <link rel="stylesheet" href="CSS/style_01.css" />
+  <script src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=21hjaofl7k"></script>
+  <script defer src="Scripts/map_search.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <img src="picture/ChatUI-export.png" alt="Logo" class="logo" />
+    <nav class="nav-links">
+      <a href="main.html">지도</a>
+      <a href="#">커뮤니티</a>
+      <a href="#">뉴스</a>
+      <a href="#">크레딧</a>
+      <a href="login.html">로그인</a>
+    </nav>
+  </header>
+
+  <div id="map-container">
+    <aside id="search-area">
+      <h2>터널 검색</h2>
+      <input type="text" id="search-input" placeholder="터널 이름 입력" />
+      <button id="search-button">검색</button>
+      
+      <div id="tunnel-info-display" style="margin-top: 20px; padding-top: 10px; border-top: 1px solid #eee;">
+        <p>터널을 선택하거나 검색해주세요.</p>
+      </div>
+      
+      <div id="search-results">
+        </div>
+    </aside>
+
+    <div id="resizer"></div>
+
+    <div id="map"></div>
+  </div>
+
+</body>
+</html>

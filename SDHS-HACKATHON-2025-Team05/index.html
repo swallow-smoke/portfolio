@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CoolPath : Map</title>
+    <link rel="shortcut icon" href="Pictures/333333.png" />
+    <link rel="stylesheet" href="CSS/map.css" />
+    <script src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=21hjaofl7k"></script>
+</head>
+
+<body>
+    <div class="navbar">
+        <img src="Pictures/333333.png" class="logo" alt="로고" />
+        <div class="nav-links">
+            <a href="menu.html">메뉴</a>
+            <a href="index.html">지도</a>
+            <a href="news.html">뉴스</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div id="search-area">
+            <div class="sidebar-section" id="temperature-info">
+                현재 온도 정보를 가져오는 중...
+            </div>
+            <div class="sidebar-section" id="radius-control"></div>
+            <div class="sidebar-section" id="search-results">
+                <h2>쉼터 정보</h2>
+                <p>쉼터를 클릭하면 정보가 표시됩니다.</p>
+            </div>
+            <div class="sidebar-section review-section">
+                <h3>리뷰 등록</h3>
+                <div class="form-group">
+                    <label for="review-item-id">쉼터 ID</label>
+                    <input type="text" id="review-item-id" value="기본 쉼터" readonly />
+                </div>
+                <div class="form-group">
+                    <label for="review-rating">별점</label>
+                    <select id="review-rating">
+                        <option value="1">⭐</option>
+                        <option value="2">⭐⭐</option>
+                        <option value="3">⭐⭐⭐</option>
+                        <option value="4">⭐⭐⭐⭐</option>
+                        <option value="5">⭐⭐⭐⭐⭐</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="review-comment">리뷰 내용</label>
+                    <textarea id="review-comment" rows="3"></textarea>
+                </div>
+                <button class="submit-button"
+                    onclick="addReview(document.getElementById('review-item-id').value, parseInt(document.getElementById('review-rating').value), document.getElementById('review-comment').value)">리뷰
+                    등록</button>
+            </div>
+            <div class="sidebar-section review-search-section">
+                <h3>리뷰 검색</h3>
+                <div class="search-input-group">
+                    <input type="text" id="review-search-query" placeholder="검색어 입력" />
+                    <button class="search-button"
+                        onclick="searchReviews(document.getElementById('review-search-query').value)">검색</button>
+                </div>
+            </div>
+            <div class="sidebar-section" id="reviews-list">
+                <h3>리뷰 목록</h3>
+            </div>
+        </div>
+        <div id="resizer"></div>
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+    </div>
+
+    <!-- 스크립트: 구조 정의 -->
+    <script src="Assets/Structures.js"></script>
+
+    <!-- 스크립트: 기온 정보 처리 -->
+    <script src="Scripts/temperature.js"></script>
+
+    <!-- 스크립트: 리뷰 시스템 -->
+    <script src="Scripts/Review.js"></script>
+
+    <!-- 스크립트: 지도 및 쉼터 처리 -->
+    <script src="Scripts/mapSearch.js"></script>
+</body>
+
+</html>
