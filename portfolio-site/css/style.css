@@ -1370,3 +1370,68 @@ html.perf-low .chip, html.perf-low .btn-outline, html.perf-low .btn-chip, html.p
 @media (min-width: 720px){
   .author-list{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
+
+/* Windows 전용 기본 톤 및 시스템 세팅 */
+.is-windows:root{
+  --accent: #0a84ff;
+  --chip-border: rgba(0,0,0,.14);
+}
+.is-windows html, .is-windows body{
+  font-family: "Segoe UI Variable", "Segoe UI", system-ui, -apple-system, "Noto Sans KR", "Malgun Gothic", sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable both-edges;
+  overscroll-behavior-y: contain;
+}
+
+/* 선택 영역 색상 */
+.is-windows ::selection{
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+
+/* 폼 컨트롤 포커스/강조 색 */
+.is-windows input, .is-windows select, .is-windows textarea, .is-windows button{
+  accent-color: var(--accent);
+}
+
+/* 스크롤바(Chromium/Edge) */
+.is-windows :is(html, body, .modal, .list, .modal-text, .author-list)::-webkit-scrollbar{
+  width: 10px; height: 10px;
+}
+.is-windows :is(html, body, .modal, .list, .modal-text, .author-list)::-webkit-scrollbar-track{
+  background: rgba(0,0,0,.06);
+  border-radius: 999px;
+}
+.is-windows :is(html, body, .modal, .list, .modal-text, .author-list)::-webkit-scrollbar-thumb{
+  background: rgba(0,0,0,.28);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+.is-windows :is(html, body, .modal, .list, .modal-text, .author-list)::-webkit-scrollbar-thumb:hover{
+  background: rgba(0,0,0,.42);
+  background-clip: content-box;
+}
+
+/* 상단 바 고정(Windows 기준, 벤더 프리픽스 제거) */
+:root{ --topbar-h: 56px; }
+header.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  backdrop-filter: saturate(1.1) blur(6px);
+  background: linear-gradient(180deg, rgba(6,18,28,.70), rgba(6,18,28,.20));
+  border-bottom: 1px solid var(--border);
+}
+header.topbar .nav{ min-height: var(--topbar-h); padding: 8px 16px; }
+html{ scroll-padding-top: var(--topbar-h); }
+
+/* 이미지/카드 약한 호버 효과(Windows 감성) */
+.is-windows .list-item{
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.is-windows .list-item:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
+}
+.is-windows .thumb img{ transition: opacity .28s ease, transform .25s ease; }
+.is-windows .list-item:hover .thumb img{ transform: scale(1.01); }

@@ -576,6 +576,9 @@ function initPerfControls(){
 
 /* ========== Init ========== */
 document.addEventListener('DOMContentLoaded', async ()=>{
+  // Windows 전용 플래그(그 외도 강제 적용)
+  document.documentElement.classList.add('is-windows');
+
   cacheEls();
   try{ await loadData(); }catch(e){ console.error(e); state.projects = []; }
   renderCategoryOptions();

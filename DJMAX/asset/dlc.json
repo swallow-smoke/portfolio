@@ -1,0 +1,196 @@
+{
+    "DLC": {
+        "Original_Extensions": [
+            {
+                "title": "V Extension",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2020.03.12",
+                "image": "./DLCimages/Extension1.png"
+            },
+            {
+                "title": "V Extension II",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2022.01.25",
+                "image": "./DLCimages/Extension2.png"
+            },
+            {
+                "title": "V Extension III",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2022.11.16",
+                "image": "./DLCimages/Extension3.png"
+            },
+            {
+                "title": "V Extension IV",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2023.06.01",
+                "image": "./DLCimages/Extension4.png"
+            },
+            {
+                "title": "V Extension V",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2023.12.07",
+                "image": "./DLCimages/Extension5.png"
+            },
+            {
+                "title": "Liverty I",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2024.06.27",
+                "image": "./DLCimages/Liverty1.png"
+            },
+            {
+                "title": "Liverty II",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2024.12.19",
+                "image": "./DLCimages/Liverty2.png"
+            },
+            {
+                "title": "Liverty III",
+                "desc": "20개 이상의 신규 곡과 다양한 기능이 추가된 확장팩입니다.",
+                "realsed": "2025.06.19",
+                "image": "./DLCimages/Liverty3.png"
+            }
+        ],
+        "Classic_Series": [
+            {
+                "title": "Trilogy Pack",
+                "desc": "EZ2DJ, EZ2AC, EZ2HC의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.04.14",
+                "image": "./DLCimages/Trilogy.png"
+            },
+            {
+                "title": "Clazziquai Edition Pack",
+                "desc": "클래지콰이의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.05.28",
+                "image": "./DLCimages/Clazziquai.png"
+            },
+            {
+                "title": "TECHNIKA Pack",
+                "desc": "EZ2DJ TECHNIKA의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.09.24",
+                "image": "./DLCimages/Technika.png"
+            },
+            {
+                "title": "Black Square Pack",
+                "desc": "EZ2DJ Black Square의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.05.28",
+                "image": "./DLCimages/Blacksquare.png"
+            },
+            {
+                "title": "TECHNIKA2 Pack",
+                "desc": "EZ2DJ TECHNIKA2의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.09.24",
+                "image": "./DLCimages/Technika2.png"
+            },
+            {
+                "title": "TECHNIKA3 Pack",
+                "desc": "EZ2DJ TECHNIKA3의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.09.24",
+                "image": "./DLCimages/Technika3.png"
+            },
+            {
+                "title": "Emotional Sense Pack",
+                "desc": "EZ2DJ Emotional Sense의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2020.03.12",
+                "image": "./DLCimages/EmotionalSense.png"
+            },
+            {
+                "title": "Portable 3 Pack",
+                "desc": "EZ2ON Portable의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2021.04.19",
+                "image": "./DLCimages/Portable3.png"
+            },
+            {
+                "title": "TECHNIKA TUNE & Q Pack",
+                "desc": "EZ2DJ TECHNIKA TUNE & Q의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2022.07.28",
+                "image": "./DLCimages/TechnikaTunenQ.png"
+            }
+        ],
+        "Collaborations": [
+            {
+                "title": "GUILTY GEAR Collaboration Pack",
+                "desc": "아크시스템웍스의 인기 격투 게임 '길티기어'와의 콜라보레이션 팩입니다.",
+                "realsed": "include with respectV",
+                "image": "./DLCimages/guiltygear.png"
+            },
+            {
+                "title": "GIRL'S FRONTLINE Collaboration Pack",
+                "desc": "SUNBORN의 인기 모바일 게임 '소녀전선'과의 콜라보레이션 팩입니다.",
+                "realsed": "2020.12.10",
+                "image": "./DLCimages/Girlsfrontline.png"
+            },
+            {
+                "title": "GROOVE COASTER Collaboration Pack",
+                "desc": "TAITO의 리듬 게임 '그루브 코스터'와의 콜라보레이션 팩입니다.",
+                "realsed": "2020.04.14",
+                "image": "./DLCimages/GROOVEcoaster.png"
+            },
+            {
+                "title": "DEEMO Pack",
+                "desc": "Rayark의 리듬 게임 '디모'와의 콜라보레이션 팩입니다.",
+                "realsed": "2020.07.16",
+                "image": "./DLCimages/Deemo.png"
+            },
+            {
+                "title": "Cytus Pack",
+                "desc": "Rayark의 리듬 게임 '사이터스'와의 콜라보레이션 팩입니다.",
+                "realsed": "2020.07.16",
+                "image": "./DLCimages/Cytus.png"
+            },
+            {
+                "title": "Chunithm Pack",
+                "desc": "SEGA의 리듬 게임 '츄니즘'과의 콜라보레이션 팩입니다.",
+                "realsed": "2020.12.10",
+                "image": "./DLCimages/Chunithm.png"
+            },
+            {
+                "title": "ESTIMATE Pack",
+                "desc": "ESTIMATE의 대표곡들이 수록된 팩입니다.",
+                "realsed": "20201.07.22",
+                "image": "./DLCimages/estimate.png"
+            },
+            {
+                "title": "NEXON Collaboration Pack",
+                "desc": "NEXON의 인기 게임들과의 콜라보레이션 팩입니다.",
+                "realsed": "2021.11.18",
+                "image": "./DLCimages/Nexon.png"
+            },
+            {
+                "title": "MUSE DASH Collaboration Pack",
+                "desc": "PEROPERO의 리듬 게임 '뮤즈 대시'와의 콜라보레이션 팩입니다.",
+                "realsed": "2022.04.28",
+                "image": "./DLCimages/Musedash.png"
+            },
+            {
+                "title": "EZ2ON REBOOT : R Collaboration Pack",
+                "desc": "EZ2ON REBOOT : R의 대표곡들이 수록된 팩입니다.",
+                "realsed": "2023.02.23",
+                "image": "./DLCimages/EZ2ON.png"
+            },
+            {
+                "title": "MapleStory Pack",
+                "desc": "NEXON의 인기 온라인 게임 '메이플스토리'와의 콜라보레이션 팩입니다.",
+                "realsed": "20203.09.07",
+                "image": "./DLCimages/Maplestory.png"
+            },
+            {
+                "title": "FALCOM Pack",
+                "desc": "Nihon Falcom의 인기 게임 시리즈와의 콜라보레이션 팩입니다.",
+                "realsed": "2024.03.14",
+                "image": "./DLCimages/Falcom.png"
+            },
+            {
+                "title": "TEKKEN Pack",
+                "desc": "반다이남코의 인기 격투 게임 '철권'과의 콜라보레이션 팩입니다.",
+                "realsed": "2024.09.26",
+                "image": "./DLCimages/TEKKEN.png"
+            },
+            {
+                "title": "Blue Archive Pack",
+                "desc": "NEXON의 인기 모바일 게임 '블루 아카이브'와의 콜라보레이션 팩입니다.",
+                "realsed": "2025.04.24",
+                "image": "./DLCimages/BA.png"
+            }
+        ]
+    }
+}
