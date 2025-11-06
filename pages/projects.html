@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Projects | Hyojun Kim</title>
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/pages/projects.css" />
+  <script src="../scripts/ui.js" defer></script>
+  <script src="../scripts/main.js" defer></script>
+  <script src="../scripts/projects.js" defer></script>
+</head>
+<body>
+  <header><div id="header"></div></header>
+  <nav><div id="nav"></div></nav>
+
+  <main>
+    <section id="projects" class="section container">
+      <div class="section__head">
+        <h2>Projects <span class="muted">(<span id="count">0</span>)</span></h2>
+      </div>
+
+      <div class="toolbar">
+      <div class="projects__toolbar">
+        <div class="search">
+          <span class="search__icon">🔎</span>
+          <input id="q" type="search" placeholder="프로젝트 검색 (/, Ctrl+K)" autocomplete="off" />
+          <button id="clear" class="search__clear" aria-label="clear">✕</button>
+        </div>
+
+        <div class="chips" id="filters" aria-label="태그 필터"></div>
+      </div>
+
+      <div class="projects__meta">
+        <span id="count">0</span>건 결과
+      </div>
+
+      <div id="project-grid" class="grid grid-3"></div>
+      <!-- 모달은 JS가 자동 생성 -->
+
+      <div id="empty" class="empty" hidden>
+        <p>검색 결과가 없습니다. 검색어 또는 태그를 변경해 보세요.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project Modal -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal__overlay" data-close="overlay"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="pm-title">
+      <button class="modal__close" aria-label="닫기" data-close="btn">✕</button>
+
+      <header class="modal__header">
+        <div class="modal__thumb" id="pm-thumb" aria-hidden="true"></div>
+        <div class="modal__meta">
+          <h3 id="pm-title"></h3>
+          <p id="pm-subtitle" class="muted"></p>
+          <div id="pm-chips" class="chips"></div>
+        </div>
+      </header>
+
+      <section class="modal__body">
+        <div id="pm-desc" class="pm-desc"></div>
+        <div id="pm-authors" class="pm-authors"></div>
+      </section>
+
+      <footer class="modal__footer" id="pm-actions"></footer>
+    </div>
+  </div>
+
+  <footer><div id="footer"></div></footer>
+</body>
+</html>
