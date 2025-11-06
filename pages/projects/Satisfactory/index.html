@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Satisfactory — Introduction Page</title>
+    <meta name="description" content="Satisfactory — 공장을 설계하고 자동화하는 1인칭 공장 건설 시뮬레이션 소개 페이지 샘플" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="fixed-header">
+            <div class="logo">
+                <div class="mark">SF</div>
+                <div>
+                    <div style="font-weight:700">Satisfactory</div>
+                    <div style="font-size:12px;color:var(--muted)">공장 건설 • 자동화 • 탐험</div>
+                </div>
+            </div>
+            <nav>
+                <a href="#features">특징</a>
+                <a href="#screenshots">스크린샷</a>
+                <a class="primary" href="https://store.steampowered.com/app/526870/Satisfactory/">스팀에서 구매</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-card">
+                <div class="eyebrow">공식 스토어</div>
+                <h1>무한으로 확장되는 <br> 1인칭 공장 건설 시뮬레이션</h1>
+                <p class="lead">넓은 외계 행성에서 자원을 채취하고 자동화된 생산 라인을 설계하세요. <br> 협동 멀티플레이로 친구와 함께 거대한 공장을 건설할 수 있습니다.</p>
+
+                <div class="cta-row">
+                    <button class="btn buy" id="buyBtn">구매하기 — Steam</button>
+                    <button class="btn primary" id="watchBtn">트레일러 보기</button>
+                    <a class="btn"
+                        style="background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);"
+                        href="#details">더 알아보기</a>
+                </div>
+
+                <div class="meta">
+                    <div>평점: ★★★★☆</div>
+                    <div>장르: 어드벤처, 인디, 시뮬레이션, 전략</div>
+                    <div>태그: 시뮬레이션, 샌드박스, 공장, 기지 건설, 자동화, 크래프팅</div>
+                    <div id="languageToggle" style="cursor:pointer">언어: 한국어 및 12개 언어 ▼</div>
+                    <ul id="languageList" class="hidden">
+                        <li>한국어</li>
+                        <li>영어</li>
+                        <li>프랑스어</li>
+                        <li>이탈리아어</li>
+                        <li>독일어</li>
+                        <li>스페인어</li>
+                        <li>일본어</li>
+                        <li>폴란드어</li>
+                        <li>포르투갈어</li>
+                        <li>러시아어</li>
+                        <li>중국어 간체</li>
+                        <li>중국어 번체</li>
+                        <li>우크라이나어</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="media" aria-hidden="true">
+                <img id="mainShot" src="./images/main.webp"
+                    alt="Satisfactory 스크린샷" />
+                <div class="play" id="playTrigger" title="트레일러 재생" aria-label="트레일러 재생"></div>
+            </div>
+        </section>
+
+        <section id="screenshots" class="features">
+            <div class="feature card">
+                <h3>대규모 자동화</h3>
+                <p>복잡한 생산 라인과 분배 시스템을 설계해 완전 자동화된 공장을 만드세요.</p>
+            </div>
+            <div class="feature card">
+                <h3>탐험 & 자원 채취</h3>
+                <p>광맥을 찾고, 외계 환경을 연구해 효율적인 채굴 포인트를 확보하세요.</p>
+            </div>
+            <div class="feature card">
+                <h3>협동 플레이</h3>
+                <p>최대 4인 협동으로 친구와 함께 공장을 확장하고 역할을 분담할 수 있습니다.</p>
+            </div>
+        </section>
+
+        <section id="features" class="gallery">
+            <div>
+                <div class="thumbs" id="thumbs">
+                    <div class="thumb active" data-src="images\232052_264433_1922.png"><img
+                            src="images\232052_264433_1922.png" alt="Screenshot 1"></div>
+                    <div class="thumb" data-src="images\ss_6f456011887f970dc230af5e1720065ca3430aae.1920x1080.jpg""><img
+                            src=" images\ss_6f456011887f970dc230af5e1720065ca3430aae.1920x1080.jpg" alt="Screenshot 2">
+                    </div>
+                    <div class="thumb" data-src="images\ss_9083ccf8fbb22c4068a6e233e3de343f815f9dc1.1920x1080.jpg"><img
+                            src="images\ss_9083ccf8fbb22c4068a6e233e3de343f815f9dc1.1920x1080.jpg" alt="Screenshot 3">
+                    </div>
+                </div>
+            </div>
+            <div style="flex:1">
+                <div class="card" style="height:220px;border-radius:12px;overflow:hidden">
+                    <img id="heroPreview" src="images\232052_264433_1922.png" alt="큰 미리보기"
+                        style="width:100%;height:100%;object-fit:cover;display:block">
+                </div>
+            </div>
+        </section>
+
+        <section id="details" class="details">
+            <div class="card">
+                <h2>게임 설명</h2>
+                <p class="lead" style="margin-top:6px;color:var(--muted)">Satisfactory는 대규모 생산 라인을 디자인하고 최적화하는 것을 중심으로 한 탐험형 샌드박스 게임입니다. <br>
+                    기지 설계, 파이프라인, 컨베이어, 전력망 관리 등 공장 건설의 모든 요소를 다룹니다. <br>
+                    플레이어는 끝없이 이어지는 외계 행성을 탐험하며 자원을 채취하고, 이를 가공해 다양한 기계와 구조물을 제작할 수 있습니다. <br>
+                    처음에는 단순한 채굴기와 발전기에서 시작하지만, 시간이 지날수록 고도의 자동화 시스템, 거대한 운송 네트워크, 하늘을 가르는 모노레일과 같은 인프라까지 구축할 수 있습니다.</p>
+
+                <p style="color:var(--muted)">또한, 플레이 과정에서 새로운 기술을 연구하고 업그레이드를 통해 생산 효율을 극대화할 수 있으며, 탐험 도중에는 예측할 수 없는 외계 생명체나 환경적 도전에 직면하기도 합니다. <br>
+                    이러한 요소는 단순히 자원을 모으는 데 그치지 않고, 전략적인 사고와 창의적인 설계가 어우러져야 공장을 성공적으로 확장할 수 있도록 만듭니다. <br>
+                    무한에 가까운 자유도로 자신만의 산업 제국을 건설하는 성취감을 느낄 수 있는 것이 Satisfactory의 가장 큰 매력입니다.</p>
+
+                <h3 style="margin-top:14px">주요 기능</h3>
+                <ul style="color:var(--muted)">
+                    <li>직관적인 건설 툴과 1인칭 시점의 현장감</li>
+                    <li>무한에 가까운 확장성과 모드 지원</li>
+                    <li>친구와 협동 가능한 멀티플레이</li>
+                </ul>
+            </div>
+
+            <aside class="card">
+                <h4>시스템 요구 사항</h4>
+                <dl class="specs">
+                    <dt>최소</dt>
+                    <dd>CPU: Intel i5 / RAM: 8GB / GPU: GTX 970</dd>
+                    <dt>권장</dt>
+                    <dd>CPU: Intel i7 / RAM: 16GB / GPU: RTX 2060</dd>
+                </dl>
+                <div style="margin-top:10px">
+                    <a id="buyLink" href="#" class="btn buy"
+                        style="display:inline-block;width:100%;text-align:center">Steam에서 구매</a>
+                </div>
+            </aside>
+        </section>
+
+        <footer>
+            © Coffee Stein Studios — Satisfactory
+        </footer>
+    </div>
+
+    <div id="modal" class="modal" role="dialog" aria-hidden="true">
+        <div class="box">
+            <button class="close-circle" id="closeModal" aria-label="닫기">✕</button>
+            <iframe id="trailerFrame" width="100%" height="100%" src="" title="Satisfactory Trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                style="border: none; aspect-ratio: 16/9;"></iframe>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

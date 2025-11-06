@@ -1,0 +1,251 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.hero {
+    background-image: url('../images/hero/hero-image.jpg');
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0 -24px -24px -24px; /* 살짝 넓게 */
+    width: calc(100% + 48px);
+    height: calc(100% + 48px);
+    z-index: 0;
+    opacity: .35; /* 파티클 배경을 더 은은하게 */
+}
+
+.hero__content, .hero__visual {
+    position: relative;
+    z-index: 1;
+}
+
+.hero__content {
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.intro {
+    padding: 20px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.project-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 히어로 칩 */
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chips--hero {
+    margin: 8px 0 6px;
+}
+
+.chip {
+    border: 1px solid var(--border);
+    background: var(--bg-soft);
+    color: var(--muted);
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: .85rem;
+    user-select: none;
+}
+
+.chip.is-hero {
+    background: color-mix(in oklab, var(--primary) 12%, var(--bg) 88%);
+    color: var(--text);
+    border-color: color-mix(in oklab, var(--primary) 26%, var(--border) 74%);
+}
+
+/* 스크롤 힌트 */
+.scroll-hint {
+    margin-top: 18px;
+}
+
+.scroll-hint__link {
+    color: var(--muted);
+    font-size: .92rem;
+    padding: 6px 8px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.scroll-hint__link:hover {
+    color: var(--text);
+    background: var(--bg-soft);
+}
+
+.scroll-hint__link::after {
+    content: ""; 
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    bottom: -2px; 
+    height: 1px;
+    background: currentColor; 
+    opacity: .25; 
+    transform: scaleX(0);
+    transform-origin: left; 
+    transition: transform var(--dur-fast) var(--ease-out-2);
+}
+
+.scroll-hint__link:hover::after {
+    transform: scaleX(1);
+}
+
+/* 리빌 애니메이션 공통 */
+.reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: .4s ease;
+}
+
+.reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
+/* 카드 썸네일 기본 */
+#featured-projects .card__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Featured Projects 썸네일 16:10 고정 */
+#featured-projects .card__thumb{
+  aspect-ratio: 16 / 10;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-soft);
+}
+#featured-projects .card__thumb img{
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+#featured-projects .thumb-fallback{ width:100%; height:100%; }
+
+/* 홈 히어로 텍스트 왼쪽 정렬 고정 */
+.hero .hero__content,
+.hero__content {
+  text-align: left !important;
+  
+}
+
+/* 내부 요소도 좌측 정렬 유지 */
+.hero__content .chips,
+.hero__content .hero__actions,
+.hero__content .scroll-hint {
+  justify-content: flex-start;
+}
+
+/* 히어로 콘텐츠를 화면의 좌측 가장자리로 붙이기 */
+#intro.hero { overflow-x: clip; } /* 음수 마진으로 인해 가로 스크롤 방지 */
+
+#intro.hero .hero__content {
+  /* 컨테이너가 중앙 정렬된 여백만큼 왼쪽으로 당김 */
+  margin-left: calc((100vw - min(1100px, 92vw)) / -2);
+  padding-left: 24px;               /* 좌측 여백(가터) */
+  max-width: min(1100px, 92vw);     /* 가독성 유지 */
+  text-align: left !important;
+  justify-self: start;
+}
+
+/* 모바일은 컨테이너 폭이 거의 전체라 당김 해제 */
+@media (max-width: 960px){
+  #intro.hero .hero__content {
+    margin-left: 0;
+    padding-left: 16px;
+  }
+}
+
+/* 내부 요소들도 좌측 정렬 */
+#intro.hero .hero__content .chips,
+#intro.hero .hero__content .hero__actions,
+#intro.hero .hero__content .scroll-hint { justify-content: flex-start; }
+
+/* 히어로 타이틀 그라데이션 살짝 이동 */
+.hero__title span {
+  background-size: 200% 100%;
+  animation: gradientSlide 6s linear infinite;
+}
+
+@keyframes gradientSlide { 
+  0% { background-position: 0% 50%; } 
+  100% { background-position: 200% 50%; } 
+}
+
+/* 히어로 블롭 은은한 펄스 */
+.hero__blob {
+  animation: blobPulse 8s ease-in-out infinite alternate;
+  will-change: transform, filter, opacity;
+}
+
+@keyframes blobPulse {
+  0% { transform: scale(1); filter: blur(12px); opacity: .7; }
+  100% { transform: scale(1.04); filter: blur(16px); opacity: .82; }
+}

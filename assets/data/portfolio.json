@@ -1,0 +1,608 @@
+[
+    {
+        "id": "djmax",
+        "title": "DJMAX",
+        "subtitle": "리듬게임 팬 페이지 / 포트폴리오",
+        "year": 2025,
+        "category": [
+            "Visualization",
+            "GAME",
+            "Web"
+        ],
+        "tags": [
+            "게임 소개",
+            "리듬",
+            "UI",
+            "반응형"
+        ],
+        "description": "DJMAX 관련 콘텐츠를 큐레이션하고 인터랙션을 실험한 프로젝트. \n반응형 레이아웃과 애니메이션을 적용해 시각적 몰입감을 높였습니다.\nTic! Tac! Toe! 라는 DJMAX의 노래를 디자인 레퍼런스로 삼아 제작하였습니다",
+        "demo": [
+            {
+                "label": "Website",
+                "url": "pages/projects/DJMAX/index.html"
+            }
+        ],
+        "image": "./images/DJMAX.PNG",
+        "color": "#00c6ff",
+        "authors": "김효준"
+    },
+    {
+        "id": "satisfactory",
+        "title": "Satisfactory",
+        "subtitle": "공장 자동화 게임 팬 페이지",
+        "year": 2025,
+        "category": "Visualization",
+        "tags": [
+            "시각화",
+            "게임 소개",
+            "Website"
+        ],
+        "description": "Satisfactory 게임을 주제로 한 웹페이지, 게임의 전체적인 소개를 표현하였습니다.",
+        "demo": [
+            {
+                "label": "Website",
+                "url": "pages/projects/Satisfactory/index.html"
+            }
+        ],
+        "image": "./images/Satisfactory.PNG",
+        "color": "#00b8d4",
+        "authors": "김효준"
+    },
+    {
+        "id": "sdhs-team05",
+        "title": "COOLPATH - SDHS 2025 HACKERTHON",
+        "subtitle": "해커톤 COOLPATH팀의 서비스 프로토타입",
+        "year": 2025,
+        "category": [
+            "Web",
+            "Hackathon",
+            "Visualization"
+        ],
+        "tags": [
+            "해커톤",
+            "프로토타입",
+            "협업",
+            "IndexDB"
+        ],
+        "description": "단기간에 기획-디자인-개발을 연결한 팀 프로젝트. \n네이버 API를 활용해 실제 장소를 지도형태로 시각화하고, \nIndexDB를 이용해 별점 기능을 임시적으로 구현하였습니다.\n또한 공공데이터포털API를 활용하여 실제 장소의 온도정보를 가져와 현재 상태를 알아볼 수 있도록 하였습니다.",
+        "demo": [
+            {
+                "label": "Prototype",
+                "url": "pages/projects/SDHS-HACKATHON-2025-Team05/index.html"
+            }
+        ],
+        "image": "./images/COOLPATH.PNG",
+        "color": "#36d1ff",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "백엔드 및 기획, 최종 검수"
+            },
+            {
+                "name": "김준엽",
+                "role": "기획 및 프론트 엔드, 디자인"
+            },
+            {
+                "name": "안성진",
+                "role": "프론트 엔드 및 디자인"
+            },
+            {
+                "name": "정서윤",
+                "role": "프론트 엔드 및 디자인"
+            }
+        ]
+    },
+    {
+        "id": "Teacher",
+        "title": "To Teacher",
+        "subtitle": "교생 선생님을 위해서 만들었던 웹사이트",
+        "year": 2025,
+        "category": "Web",
+        "tags": [
+            "프로토타입",
+            "시각화",
+            "Website",
+            "JavaScript"
+        ],
+        "description": "교생선생님이 학교에서 떠나시기전에 학생들이 만들어드린 웹사이트입니다.",
+        "authors": [
+            "안드레",
+            "이준호",
+            "강민준",
+            "권시후",
+            "김세원",
+            {
+                "name": "김준엽",
+                "role": "기획"
+            },
+            "김지원",
+            "김태준",
+            {
+                "name": "김효준",
+                "role": "프로그래밍 구현"
+            },
+            "노우영",
+            "안현석",
+            "오윤석",
+            "윤서현",
+            "이미선",
+            "이재성",
+            "이희찬",
+            "정시헌",
+            "정하민",
+            "최성윤",
+            "한지윤",
+            "허지애"
+        ],
+        "links": {
+            "demo": "pages/projects/Teacher/index.html"
+        },
+        "image": "./images/Teacher.PNG"
+    },
+    {
+        "id": "DISCORD BOT",
+        "title": "Irin Discord Bot",
+        "subtitle": "디스코드 봇 제작",
+        "year": 2024,
+        "category": "Bot",
+        "tags": [
+            "디스코드",
+            "협업",
+            "MongoDB",
+            "Node.js",
+            "JavaScript"
+        ],
+        "description": "유튜버 '이린'의 디스코드 서버에서 사용되는 봇을 제작하였습니다.\nMongoDB를 활용하여 사용자 데이터를 저장하고 다양한 명령어와 기능을 구현하였습니다.\n현재 실제로 사용되는 봇으로, 일 평균 이용자수 10 ~ 20명 정도의 사용량을 가지고 있습니다.",
+        "links": {
+            "demo": "https://discord.gg/souririn",
+            "repo": ""
+        },
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "사냥, 낚시등 미니게임 컨텐츠 개발 및 경제 시스템 설계, 유지보수",
+                "github": "https://github.com/emiteat"
+            },
+            {
+                "name": "이린",
+                "role": "기획, 및 디스코드 서버 운영",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/@%EC%9D%B4%EB%A6%B0"
+                    },
+                    {
+                        "label": "Discord",
+                        "url": "https://discord.gg/souririn"
+                    }
+                ]
+            },
+            {
+                "name": "테오",
+                "role": "서버 경매 시스템 개발 및 유지보수",
+                "github": "https://github.com/wjdgustn"
+            },
+            {
+                "name": "정현수",
+                "role": "봇 개발 기본 베이스 제작 및 피드백",
+                "github": "https://github.com/wjdgustn"
+            },
+            {
+                "name": "Byeool",
+                "role": "봇 서버 호스팅"
+            }
+        ]
+    },
+    {
+        "id": "PROJECT YH",
+        "title": "PROJECT YH",
+        "subtitle": "리듬게임 PROJECT YH 제작",
+        "year": 2025,
+        "category": "GAME",
+        "tags": [
+            "게임 제작",
+            "리듬",
+            "Unity",
+            "C#"
+        ],
+        "description": "Unity 엔진을 사용하여 개발중인 리듬게임 프로젝트입니다. \n다양한 음악과 난이도를 제공하며,\n유저들간의 온라인 경쟁 기능을 포함하여 몰입감 있는 게임 경험을 제공합니다.\n유저들이 직접 레벨을 만들어 배포할 수 있는 기능도 포함하고 있습니다.",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "기획 및 마케팅, QA"
+            },
+            {
+                "name": "이현우",
+                "role": "기획 및 프로그래밍, 팀장"
+            },
+            {
+                "name": "우지호",
+                "role": "그래픽"
+            }
+        ],
+        "image": "./images/PYH.png",
+        "demo": [
+            {
+                "label": "Instagram",
+                "url": "https://www.instagram.com/projectyh_offl/"
+            },
+            {
+                "label": "X (Twitter)",
+                "url": "https://x.com/ProjectYH_OFFL?t=BctLX7b_FAuBdMt6xPeIWw&s=09&fbclid=PAZXh0bgNhZW0CMTEAAaf2Yo0-0Wt9PBAAECDGOwuyOylN6GxO0VsZXE_V5q_ZXAZrB0nwxlFQ2itXJA_aem_7R0dIqBjSy8xjTYtyk2LtQ"
+            }
+        ]
+    },
+    {
+        "id": "PROJECT SEPHIROTH",
+        "title": "PROJECT Sephiroth",
+        "subtitle": "플랫포머 게임 PROJECT Sephiroth 제작",
+        "year": 2025,
+        "category": "GAME",
+        "tags": [
+            "게임 제작",
+            "플랫포머",
+            "Unity",
+            "C#"
+        ],
+        "description": "Unity 엔진을 사용하여 개발중인 플랫포머 게임 프로젝트입니다. \n다양한 스테이지와 도전 과제를 제공하며, 보스전 및 업그레이드 시스템을 포함하여 흥미진진한 게임 경험을 제공합니다.",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "기획 및 프로그래밍, 팀장"
+            },
+            {
+                "name": "김준형",
+                "role": "프로그래밍 팀장"
+            },
+            {
+                "name": "문태호",
+                "role": "프로그래밍"
+            },
+            {
+                "name": "김채린",
+                "role": "프로그래밍"
+            },
+            {
+                "name": "양정민",
+                "role": "그래픽"
+            },
+            {
+                "name": "김세원",
+                "role": "그래픽"
+            },
+            {
+                "name": "정나경",
+                "role": "그래픽"
+            },
+            {
+                "name": "이재성",
+                "role": "그래픽"
+            },
+            {
+                "name": "이준",
+                "role": "그래픽 및 스토리"
+            },
+            {
+                "name": "김강현",
+                "role": "기획"
+            },
+            {
+                "name": "정하민",
+                "role": "기획"
+            },
+            {
+                "name": "이현우",
+                "role": "프로그래밍 피드백"
+            },
+            {
+                "name": "이예성",
+                "role": "프로그래밍 피드백"
+            },
+            {
+                "name": "김채희",
+                "role": "그래픽 피드백"
+            },
+            {
+                "name": "주한희",
+                "role": "그래픽 피드백"
+            },
+            {
+                "name": "김은성",
+                "role": "그래픽 피드백"
+            },
+            {
+                "name": "마레토",
+                "role": "사운드 디자인 및 스토리"
+            },
+            {
+                "name": "시리우스",
+                "role": "사운드 디자인 및 스토리"
+            },
+            {
+                "name": "리데숙",
+                "role": "사운드 디자인 및 스토리"
+            },
+            {
+                "name": "offof",
+                "role": "메인 BGM 작곡 및 사운드 디자인"
+            },
+            {
+                "name": "DJ Aomori",
+                "role": "보스전 BGM 작곡 및 사운드 디자인"
+            }
+        ],
+        "demo": [
+            {
+                "label": "Planning document",
+                "url": "https://drive.google.com/drive/u/0/folders/1ALp_TeQwzvbxzAcnpTN_upr5DXh8sAp-"
+            }
+        ],
+        "image": "./images/PSephi.PNG"
+    },
+    {
+        "id": "Circles-in-ruin",
+        "title": "Circles in ruin",
+        "subtitle": "리듬게임 BGA 제작",
+        "year": 2025,
+        "category": ["BGA", "VFX", "GAME"],
+        "tags": [
+            "BGA 제작",
+            "리듬",
+            "ADOFAI",
+            "Unity"
+        ],
+        "description": "리듬게임 A Dance of Fire and Ice의 커스텀 스테이지 'Circles in ruin'의 BGA를 제작하였습니다.",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "BGA 제작"
+            },
+            {
+                "name": "고서양",
+                "role": "BGA 제작"
+            },
+            {
+                "name": "굥욷",
+                "role": "BGA 제작 팀장"
+            },
+            {
+                "name": "PillyXD",
+                "role": "BGA 제작"
+            },
+            {
+                "name": "Bingsu",
+                "role": "BGA 제작"
+            },
+            {
+                "name": "가지지",
+                "role": "스토리 텔링"
+            },
+            {
+                "name": "새제비",
+                "role": "차팅"
+            }
+        ],
+        "image": "./images/Circlesinruin.PNG"
+    },
+    {
+        "id": "TUF",
+        "title": "The Univercial Forum Management",
+        "subtitle": "TUF 포럼의 관리",
+        "year": 2023,
+        "category": [
+            "GAME",
+            "Web",
+            "Management"
+        ],
+        "tags": [
+            "서버 관리",
+            "ADOFAI",
+            "Website"
+        ],
+        "demo": [
+            {"label": "Discord", "url": "https://discord.gg/JWkvfH3Dwm"},
+            {"label": "Website", "url": "https://tuforums.com/"}
+        ],
+        "description": "리듬 게임 A Dance of Fire and Ice의 유저 포럼 The Univercial Forum의 관리를 하였습니다.",
+        "image": "./images/TUF.PNG",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "TUF 운영관리자"
+            },
+            {
+                "name": "기타 운영진",
+                "role": "많아서 생략"
+            }
+        ]
+    },
+    {
+        "id": "ARES",
+        "title": "ARES Management",
+        "subtitle": "ARES 포럼의 관리",
+        "year": 2023,
+        "category": [
+            "GAME",
+            "Management"
+        ],
+        "tags": [
+            "서버 관리",
+            "GAME",
+            "ADOFAI"
+        ],
+        "description": "리듬 게임 A Dance of Fire and Ice의 유저 포럼 ARES입니다.\n해당 포럼은 Discord로 운영되며, \nVFX를 주제로 하여 에셋 공유, 레벨 공유, 토론등 다양한 활동이 이루어지고 있습니다.\nVFX의 실력을 '랭크'라는 형태로 나누어 실력별로 피드백을 받고 기타 중소 팀에서 활용할 수 있게끔 하고 있습니다.\n현재 약 560명 정도의 VFXer가 활동하고 있습니다.",
+        "image": "./images/ARES.PNG",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "서버 관리자"
+            },
+            {
+                "name": "굥욷",
+                "role": "서버 창립 및 관리"
+            },
+            {
+                "name": "Asansis",
+                "role": "서버 관리자"
+            },
+            {
+                "name": "Silicon!Silicon?Mackerel!",
+                "role": "서버 관리자"
+            },
+            {
+                "name": "김포맷",
+                "role": "서버 관리자"
+            },
+            {
+                "name": "Jongyeol",
+                "role": "서버 관리 및 봇 시스템 개발"
+            },
+            {
+                "name": "Etell",
+                "role": "서버 관리자"
+            }
+        ]
+    },
+    {
+        "id": "ADOFAIGG",
+        "category": [
+            "GAME",
+            "Management"
+        ],
+        "title": "ADOFAI GG Management",
+        "subtitle": "ADOFAI GG 포럼의 관리",
+        "year": 2023,
+        "description": "리듬게임 A Dance of Fire and Ice의 유저 포럼 ADOFAI GG의 관리를 하고 있습니다.\n해당 포럼은 Discord와 웹사이트로 운영되며, \n레벨 공유, 토론, AWC 개최등 다양한 활동이 이루어지고 있습니다.\n현재 약 2만명 정도의 유저가 활동하고 있습니다. \n 또한 ADOFAI GG는 ADOFAI 관련 최대 커뮤니티라고 할 수 있습니다.\n매년 AWC(ADOFAI World Cup)라는 대회를 개최하여 전세계에 있는 유저들이 참가하여 서로의 실력을 겨루는 대회를 개최하고 있습니다.",
+        "tags": [
+            "서버 관리",
+            "GAME",
+            "ADOFAI"
+        ],
+        "authors": [
+            {
+                "name": "Crackthorugh",
+                "role": "ADOFAI GG 관리자 및 ADOFAI 개발자, AWC,EPC 운영관리자",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/@CrackThrough"
+                    }
+                ]
+            },
+            {
+                "name": "Editor AlriC",
+                "role": "ADOFAI GG 관리자",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/@EditorAlriC"
+                    }
+                ]
+            },
+            {
+                "name": "김효준",
+                "role": "ADOFAI GG 관리자 및 AWC 운영관리자"
+            },
+            {
+                "name": "rhythmfactory",
+                "role": "ADOFAI GG 관리자"
+            },
+            {
+                "name": "Rivien",
+                "role": "ADOFAI GG 관리자"
+            },
+            {
+                "name": "니치페",
+                "role": "ADOFAI GG 관리자 및 LOFY, GOTY, Featured Level 책정관",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/@Nichipe"   
+                    },
+                    {
+                        "label": "Discord",
+                        "url": "discord.gg/gzvMkAv"
+                    }
+                ]
+            },
+            {
+                "name": "Taronuke",
+                "role": "ADOFAI GG 관리자"
+            },
+            {
+                "name": "Morphious86",
+                "role": "ADOFAI GG 관리자"
+            },
+            {
+                "name": "Lai",
+                "role": "ADOFAI GG 관리자 및 AWC, EPC 운영관리자",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/channel/UCMtVAihGMQuogAy8hcpnQ1A"
+                    },
+                    {
+                        "label": "Discord",
+                        "url": "on.sirohana.org/discord"
+                    },
+                    {
+                        "label": "Spotify",
+                        "url": "on.sirohana.org/spotify"
+                    },
+                    {
+                        "label": "SoundCloud",
+                        "url": "soundcloud.com/ixlai"
+                    }
+                ]
+            },
+            {
+                "name": "달성",
+                "role": "ADOFAI GG 관리자 및 AWC, EPC 운영관리자",
+                "github": [
+                    {
+                        "label": "Youtube",
+                        "url": "https://www.youtube.com/@dazzlest"
+                    },
+                    {
+                        "label": "Discord",
+                        "url": "discord.gg/NxErgK9w5x"
+                    },
+                    {
+                        "label": "X (Twitter)",
+                        "url": "x.com/Dazzl1ng_"
+                    }
+                ]
+            },
+            {
+                "name": "Helloyunho",
+                "role": "ADOFAI GG 관리자"
+            },
+            {
+                "name": "Poodew",
+                "role": "ADOFAI GG 관리자"
+            }
+        ]
+    },
+    {
+        "id": "Mod",
+        "category": [
+            "GAME",
+            "Modding",
+            "ADOFAI"
+        ],
+        "title": "ADOFAI Editor Helper",
+        "subtitle": "ADOFAI Modding",
+        "year": 2025,
+        "description": "ADOFAI의 맵 에디터 기능을 확장하는 모드입니다. \n맵 제작자들이 더 편리하게 맵을 제작 할 수 있도록\n 다양한 기능을 지원해줍니다.\n\n현재 지원하는 기능은 다음과 같습니다 \n- 3D장식 자동 생성\nㅤㅤㅤ2.5D, Ray Casting 방식으로 제작됩니다.\n- Dynamic Decorations\nㅤㅤㅤ(영상을 검은 화면을 분리하여 프레임별로 사진을 만들어줍니다.)\n- Custom Keybinds\nㅤㅤㅤ(사용자가 원하는 키로 단축키를 설정하게끔 도와줍니다.)\n- 타임라인 에디터\nㅤㅤㅤ(에디터를 Premeire Pro처럼 사용할 수 있게 도와줍니다.)\n현재까지 개발중인 모드로, 지속적으로 기능이 추가되고 있습니다.",
+        "authors": [
+            {
+                "name": "김효준",
+                "role": "모드 개발 및 버그 수정"
+            },
+            {
+                "name": "Asansis",
+                "role": "모드 개발 및 기획"
+            }
+        ]
+    }
+]
