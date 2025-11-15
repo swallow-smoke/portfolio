@@ -15,9 +15,9 @@
 
   async function initComponents() {
     await Promise.all([
-      loadFragment('#', 'components/header.html'),
-      loadFragment('#',    'components/nav.html'),
-      loadFragment('#', 'components/footer.html'),
+      loadFragment('#', 'pages/components/header.html'),
+      loadFragment('#',    'pages/components/nav.html'),
+      loadFragment('#', 'pages/components/footer.html'),
     ]);
 
     const y = document.getElementById('year');
