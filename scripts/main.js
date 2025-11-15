@@ -51,24 +51,106 @@ function initPageScripts(page) {
     // Add more conditions for other pages as necessary
 }
 
-(function(){
-  const h = (html)=>{ 
-    const t=document.createElement('template'); 
-    t.innerHTML=html.trim(); 
-    return t.content.firstElementChild; 
-  };
-  const esc = (s)=>String(s||'').replace(/[&<>"']/g,m=>({
-    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
-  }[m]));
+(async function(){
+  async function loadFragment(selector, url){
+    const host = document.querySelector(selector);
+    if(!host) return;
+    // 기본 경로 시도 → 실패 시 pages/components 폴백
+    const tries = [url, url.replace(/^components\//, 'pages/components/')];
+    for (const u of tries){
+      try {
+        const res = await fetch(u);
+        if (!res.ok) continue;
+        host.innerHTML = await res.text();
+        return;
+      } catch {}
+    }
+  }
 
+  async function initComponents(){
+    await Promise.all([
+      loadFragment('#header', 'components/header.html'),
+      loadFragment('#nav', 'components/nav.html'),
+      loadFragment('#footer', 'components/footer.html'),
+    ]);
+    // Footer year
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+    // Theme toggle after components mounted
+    window.UI?.initTheme();
+    window.UI?.bindThemeToggle();
+    window.UI?.setActiveNav();
+  }
+
+  async function getPortfolio(){
+    try {
+      const res = await fetch('assets/data/portfolio.json');
+      const data = await res.json();
+      return normalize(data);
+    } catch (e){
+      console.warn('portfolio.json을 불러오지 못했습니다.', e);
+      return [];
+    }
+  }
+  function normalize(data){
+    // data.projects, data.portfolio, 배열 모두 허용
+    const list = Array.isArray(data) ? data : (data?.projects || data?.portfolio || []);
+    return list.map(p => ({
+      title: p.title || p.name || 'Untitled',
+      desc: p.description || p.desc || '',
+      image: p.image || p.thumbnail || '',
+      url: p.url || p.link || '#',
+      tags: p.tags || p.stack || [],
+      featured: p.featured ?? true
+    }));
+  }
+
+  function el(html){
+    const t = document.createElement('template');
+    t.innerHTML = html.trim();
+    return t.content.firstElementChild;
+  }
+
+  function renderFeatured(projects){
+    const wrap = document.getElementById('featured-projects');
+    if(!wrap) return;
+    wrap.innerHTML = '';
+    projects.filter(p=>p.featured).slice(0, 6).forEach(p=>{
+      const card = el(`
+        <article class="card reveal">
+          <a href="${p.url}">
+            <div class="card__thumb">
+              ${p.image ? `<img src="${p.image}" alt="${p.title}">` : ''}
+            </div>
+            <div class="card__body">
+              <h3 class="card__title">${p.title}</h3>
+              <p class="card__desc">${p.desc || ''}</p>
+              <div class="tags">
+                ${(p.tags||[]).slice(0,5).map(t=>`<span class="tag">${t}</span>`).join('')}
+              </div>
+            </div>
+          </a>
+        </article>
+      `);
+      wrap.appendChild(card);
+    });
+    window.UI?.revealOnScroll();
+  }
+
+  await initComponents();
+  const data = await getPortfolio();
+  renderFeatured(data);
+})();
+
+(function(){
+  const h = (html)=>{ const t=document.createElement('template'); t.innerHTML=html.trim(); return t.content.firstElementChild; };
+  const esc = (s)=>String(s||'').replace(/[&<>"']/g,m=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[m]));
   // 이미지: images/projects/<파일명> 강제
   const resolveImage = (p)=>{
     if (!p) return '';
-    if (/^https?:\/\//i.test(p)) return p;           // 절대 URL 허용
+    if (/^https?:\/\//i.test(p)) return p;
     const cleaned = String(p).replace(/^\.\//,'').replace(/^\/+/,'');
-    if (/^images\//i.test(cleaned)) return cleaned;  // 루트 images/* 이면 그대로 사용
-
-    // assets/data/portfolio.json 에서 image가 'abc.png' 또는 'projects/abc.png' 라고 가정
+    if (/^images\//i.test(cleaned)) return cleaned; // 루트 images/* 이미 주어진 경우 사용
     const file = cleaned.split('/').pop();
     return `images/projects/${file}`;
   };
@@ -78,13 +160,11 @@ function initPageScripts(page) {
     return list.map((p,i)=>({
       id: p.id || `p-${i}`,
       title: p.title || p.name || 'Untitled',
-      subtitle: p.subtitle || p.description || p.desc || '',
+      subtitle: p.subtitle || '',
       year: p.year || 0,
       tags: Array.isArray(p.tags)? p.tags : (p.tags? [p.tags] : []),
       image: p.image || p.thumbnail || '',
-      demos: Array.isArray(p.demo)
-        ? p.demo
-        : (p.url||p.link ? [{label:'Open', url:p.url||p.link}] : []),
+      demos: Array.isArray(p.demo)? p.demo : (p.url||p.link? [{label:'Open', url:p.url||p.link}] : []),
       color: p.color || ''
     }));
   }
@@ -99,7 +179,6 @@ function initPageScripts(page) {
     const root = document.getElementById('featured-projects');
     if (!root) return;
     root.innerHTML = '';
-
     list.forEach((p, idx)=>{
       const img = p.image
         ? `<img src="${resolveImage(p.image)}" alt="${esc(p.title)}" loading="lazy">`
@@ -111,19 +190,13 @@ function initPageScripts(page) {
           <div class="card__body">
             <h3 class="card__title">${esc(p.title)}</h3>
             ${p.subtitle ? `<p class="card__desc">${esc(p.subtitle)}</p>` : ''}
-            <div class="tags">
-              ${(p.tags||[]).slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}
-            </div>
-            ${p.demos?.[0]?.url
-              ? `<a class="btn btn-ghost" href="${p.demos[0].url}" target="_blank" rel="noreferrer">열어보기</a>`
-              : ''
-            }
+            <div class="tags">${(p.tags||[]).slice(0,4).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>
+            ${p.demos?.[0]?.url ? `<a class="btn btn-ghost" href="${p.demos[0].url}">열어보기</a>` : ''}
           </div>
         </article>
       `);
       root.appendChild(card);
     });
-
     window.UI?.revealOnScroll?.(root);
   }
 
