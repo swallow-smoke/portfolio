@@ -16,6 +16,7 @@
     for (let raw of lines){
       const line = raw.trimEnd();
 
+      // 제목 처리
       if (/^#{1,6}\s/.test(line)){
         flushList();
         const m = /^(#{1,6})\s+(.*)$/.exec(line);
@@ -25,6 +26,7 @@
         continue;
       }
 
+      // 목록 처리
       if (/^-\s+/.test(line)){
         if (!inList){ html += '<ul>'; inList = true; }
         const item = line.replace(/^-+\s+/, '');
@@ -32,14 +34,18 @@
         continue;
       }
 
+      // 빈 줄 처리
       if (line === ''){
         flushList();
         html += '<p></p>';
         continue;
       }
 
+      // 줄바꿈 처리 (한 줄 끝에 두 개의 공백이 있는 경우)
+      const withLineBreaks = line.replace(/ {2}$/, '<br>');
+
       flushList();
-      html += `<p>${inline(line)}</p>`;
+      html += `<p>${inline(withLineBreaks)}</p>`;
     }
     flushList();
     return html;
