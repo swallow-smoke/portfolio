@@ -68,9 +68,9 @@ function initPageScripts(page) {
 
   async function initComponents(){
     await Promise.all([
-      loadFragment('#header', 'pages/components/header.html'),
-      loadFragment('#nav', 'pages/components/nav.html'),
-      loadFragment('#footer', 'pages/components/footer.html'),
+      loadFragment('#header', 'header.html'),
+      loadFragment('#nav', 'nav.html'),
+      loadFragment('#footer', 'footer.html'),
     ]);
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
