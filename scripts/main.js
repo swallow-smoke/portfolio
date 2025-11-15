@@ -5,7 +5,7 @@
     if (!host) return;
 
     try {
-      const res = await fetch(url); // index.html 기준 상대경로
+      const res = await fetch(url);
       if (!res.ok) throw new Error(res.statusText);
       host.innerHTML = await res.text();
     } catch (e) {
@@ -15,9 +15,10 @@
 
   async function initComponents() {
     await Promise.all([
-      loadFragment('#header', '/portfolio/pages/components/header.html'),
-      loadFragment('#nav',    '/portfolio/pages/components/nav.html'),
-      loadFragment('#footer', '/portfolio/pages/components/footer.html'),
+      // 🔥 절대경로에서 /portfolio 제거
+      loadFragment('#header', '/pages/components/header.html'),
+      loadFragment('#nav',    '/pages/components/nav.html'),
+      loadFragment('#footer', '/pages/components/footer.html'),
     ]);
 
     const y = document.getElementById('year');
@@ -30,7 +31,7 @@
 
   async function getPortfolio() {
     try {
-      // index.html 기준 → /assets/data/portfolio.json
+      // index.html 기준: ./assets/data/portfolio.json
       const res = await fetch('assets/data/portfolio.json');
       const data = await res.json();
       return normalize(data);
