@@ -1,5 +1,3 @@
-// This file manages user interface interactions for the portfolio website.
-
 document.addEventListener('DOMContentLoaded', function() {
     // Smooth scrolling for internal links
     const internalLinks = document.querySelectorAll('a[href^="#"]');
