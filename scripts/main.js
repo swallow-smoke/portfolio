@@ -67,13 +67,15 @@ function initPageScripts(page) {
   }
 
   async function initComponents(){
-    await Promise.all([
-      loadFragment('#header', 'header.html'),
-      loadFragment('#nav', 'nav.html'),
-      loadFragment('#footer', 'footer.html'),
-    ]);
+    // header/nav/footer 조각 로드 (필요 없으면 생략)
+    // await loadFragment('#header', 'components/header.html');
+    // await loadFragment('#nav', 'components/nav.html');
+    // await loadFragment('#footer', 'components/footer.html');
+
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
+
+    // ✅ UI 초기화는 여기서 한 번만
     window.UI?.initTheme();
     window.UI?.bindThemeToggle();
     window.UI?.setActiveNav();
