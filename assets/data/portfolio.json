@@ -209,7 +209,7 @@
         "authors": [
             {
                 "name": "김효준",
-                "role": "기획 및 QA"
+                "role": "기획 및 마케팅, QA"
             },
             {
                 "name": "이현우",
@@ -431,7 +431,7 @@
             "ADOFAI"
         ],
         "description": "리듬 게임 A Dance of Fire and Ice의 유저 포럼 ARES입니다.\n해당 포럼은 Discord로 운영되며, \nVFX를 주제로 하여 에셋 공유, 레벨 공유, 토론등 다양한 활동이 이루어지고 있습니다.\nVFX의 실력을 '랭크'라는 형태로 나누어 실력별로 피드백을 받고 기타 중소 팀에서 활용할 수 있게끔 하고 있습니다.\n현재 약 560명 정도의 VFXer가 활동하고 있습니다.",
-        "image": "ARES.PNG",
+        "image": "./images/ARES.PNG",
         "authors": [
             {
                 "name": "김효준",
@@ -461,9 +461,6 @@
                 "name": "Etell",
                 "role": "서버 관리자"
             }
-        ],
-        "demo": [
-            {"label": "Discord", "url": "https://discord.gg/YE459PGgGJ"}
         ]
     },
     {
