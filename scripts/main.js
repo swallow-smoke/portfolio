@@ -16,9 +16,9 @@
   async function initComponents() {
     await Promise.all([
       // 🔥 절대경로에서 /portfolio 제거
-      loadFragment('#header', '/pages/components/header.html'),
-      loadFragment('#nav',    '/pages/components/nav.html'),
-      loadFragment('#footer', '/pages/components/footer.html'),
+      loadFragment('#header', 'portfolio/pages/components/header.html'),
+      loadFragment('#nav',    'portfolio/pages/components/nav.html'),
+      loadFragment('#footer', 'portfolio/pages/components/footer.html'),
     ]);
 
     const y = document.getElementById('year');
