@@ -32,7 +32,7 @@
   async function getPortfolio() {
     try {
       // index.html 기준: ./assets/data/portfolio.json
-      const res = await fetch('assets/data/portfolio.json');
+      const res = await fetch('/portfolio/assets/data/portfolio.json');
       const data = await res.json();
       return normalize(data);
     } catch (e) {
