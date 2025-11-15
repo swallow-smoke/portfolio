@@ -13,6 +13,42 @@
 
   <!-- 페이지 전용 -->
   <link rel="stylesheet" href="../css/pages/contact.css" />
+
+  <style>
+    /* 다크 모드: 완전 블랙 */
+    html[data-theme="dark"],
+    html[data-theme="dark"] body {
+        background: #000 !important;
+        color: var(--text);
+    }
+
+    html[data-theme="dark"] .site-header,
+    html[data-theme="dark"] .site-nav,
+    html[data-theme="dark"] .site-footer {
+        background: #000 !important;
+    }
+
+    /* 라이트 모드: 화이트 */
+    html[data-theme="light"],
+    html[data-theme="light"] body {
+        background: #fff !important;
+    }
+
+    html[data-theme="light"] .site-header,
+    html[data-theme="light"] .site-nav,
+    html[data-theme="light"] .site-footer {
+        background: #fff !important;
+    }
+
+    .hero {
+        background: transparent;
+    }
+
+    .hero__bg {
+        background: transparent;
+        opacity: .30;
+    }
+</style>
 </head>
 <body>
   <header><div id="header"></div></header>
