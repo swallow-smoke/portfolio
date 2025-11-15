@@ -169,3 +169,20 @@ h2 {
   .hero { grid-template-columns: 1fr; }
   .hero__visual { order: -1; min-height: 160px; }
 }
+
+html[data-theme="dark"],
+html[data-theme="dark"] body {
+  background: #000 !important;
+  color: var(--text);
+}
+
+html[data-theme="dark"] .site-header,
+html[data-theme="dark"] .site-nav,
+html[data-theme="dark"] .site-footer {
+  background: #000 !important;
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #fff !important;
+}
