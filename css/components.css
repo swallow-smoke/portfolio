@@ -340,12 +340,34 @@ p {
 }
 
 .hero__blob {
-    position: absolute;
-    inset: 0;
-    background: var(--gradient-hero);
-    border-radius: 24px;
-    filter: blur(14px);
-    opacity: 0.75;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 1; /* 정사각형 비율 유지 */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 50%; /* 원형으로 만들기 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero__blob img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 이미지가 영역에 맞게 채워지도록 설정 */
+    animation: blobAnimation 8s infinite alternate ease-in-out;
+}
+
+/* Blob 애니메이션 */
+@keyframes blobAnimation {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(15deg);
+    }
+    100% {
+        transform: scale(1) rotate(-15deg);
+    }
 }
 
 /* Modal styles */
@@ -359,3 +381,29 @@ p {
 }
 @keyframes modalIn { from { transform: translateY(8px) scale(.98); opacity: .85; } to { transform:none; opacity:1; } }
 .modal__close:hover { transform: scale(1.05); }
+
+.particles-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    animation: fadeInOut 6s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+/* 섹션에 상대적 위치 지정 */
+#about, #projects {
+    position: relative;
+    overflow: hidden;
+}

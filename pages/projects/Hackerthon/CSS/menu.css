@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+
+body {
+    font-family: sans-serif;
+    color: white;
+    background: linear-gradient(0deg, rgba(63,94,251,1) 0%, rgb(141, 36, 122) 100%);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+    gap: 20px;
+}
+.card-wrapper {
+    position: relative;
+    width: 960px;
+    height: 620px;
+    perspective: 1000px;
+}
+
+.card {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 360px;
+    height: 600px;
+    margin-left: -150px;
+    background: #ddd;
+    border-radius: 10%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    filter: brightness(75%);
+    transition: transform 0.4s ease, z-index 0.4s ease, opacity 0.4s ease;
+}
+.card:hover{
+  transition: 0.3s;
+  filter: brightness(125%);
+}
+
+button.previous,
+button.next {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+button.previous:hover,
+button.next:hover {
+    background: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  /* background-color:#2e2958; */
+}
+.logo {
+  height: 4vw;
+}
+#langToggle :hover{
+    color: #d43f3f;;
+}
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fffefe;
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #d43f3f;
+}
+.center>div{
+    margin: 6% 0% 0% 0%;
+    display: flex;
+    justify-content: center;
+}
+.center>h3{
+    display: flex;
+    justify-content: center;
+}
+footer>div{
+    margin: 1% 5% 1% 5% ;
+    
+    
+}
+.card img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+.card img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    filter: brightness(80%);
+}
+.card p {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 30px;
+    color: #ffffff;
+    text-align: center;
+    width: 90%; /* 긴 문장을 위한 너비 */
+}
+
+#langToggle {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: #ffffffdd;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#langToggle:hover {
+  background-color: #eeeeee;
+}

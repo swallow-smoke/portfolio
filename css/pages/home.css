@@ -206,14 +206,7 @@ body {
 /* 히어로 콘텐츠를 화면의 좌측 가장자리로 붙이기 */
 #intro.hero { overflow-x: clip; } /* 음수 마진으로 인해 가로 스크롤 방지 */
 
-#intro.hero .hero__content {
-  /* 컨테이너가 중앙 정렬된 여백만큼 왼쪽으로 당김 */
-  margin-left: calc((100vw - min(1100px, 92vw)) / -2);
-  padding-left: 24px;               /* 좌측 여백(가터) */
-  max-width: min(1100px, 92vw);     /* 가독성 유지 */
-  text-align: left !important;
-  justify-self: start;
-}
+
 
 /* 모바일은 컨테이너 폭이 거의 전체라 당김 해제 */
 @media (max-width: 960px){

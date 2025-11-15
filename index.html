@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Hyojun Kim</title>
+    <base href="/portfolio/">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -17,20 +18,39 @@
 
     <!-- index 전용: 테마별 배경 강제 -->
     <style>
-      /* 다크 모드: 완전 블랙 */
-      html[data-theme="dark"], html[data-theme="dark"] body { background: #000 !important; color: var(--text); }
-      html[data-theme="dark"] .site-header,
-      html[data-theme="dark"] .site-nav,
-      html[data-theme="dark"] .site-footer { background: #000 !important; }
+        /* 다크 모드: 완전 블랙 */
+        html[data-theme="dark"],
+        html[data-theme="dark"] body {
+            background: #000 !important;
+            color: var(--text);
+        }
 
-      /* 라이트 모드: 화이트 */
-      html[data-theme="light"], html[data-theme="light"] body { background: #fff !important; }
-      html[data-theme="light"] .site-header,
-      html[data-theme="light"] .site-nav,
-      html[data-theme="light"] .site-footer { background: #fff !important; }
+        html[data-theme="dark"] .site-header,
+        html[data-theme="dark"] .site-nav,
+        html[data-theme="dark"] .site-footer {
+            background: #000 !important;
+        }
 
-      .hero { background: transparent; }
-      .hero__bg { background: transparent; opacity: .30; }
+        /* 라이트 모드: 화이트 */
+        html[data-theme="light"],
+        html[data-theme="light"] body {
+            background: #fff !important;
+        }
+
+        html[data-theme="light"] .site-header,
+        html[data-theme="light"] .site-nav,
+        html[data-theme="light"] .site-footer {
+            background: #fff !important;
+        }
+
+        .hero {
+            background: transparent;
+        }
+
+        .hero__bg {
+            background: transparent;
+            opacity: .30;
+        }
     </style>
 </head>
 
@@ -67,17 +87,19 @@
                     <a class="btn btn-primary" href="#projects">프로젝트 보기</a>
                     <a class="btn btn-ghost" href="#about">소개 더보기</a>
                 </div>
-                <div class="scroll-hint">
-                    <a class="scroll-hint__link" href="#about" aria-label="About으로 이동">스크롤 해보세요 ↓</a>
-                </div>
             </div>
             <div class="hero__visual">
-                <div class="hero__blob"></div>
+                <div class="hero__blob"><img
+                        src="/images/7SO2FDuNnzmK_kE68K_wceSKJqoW8-E4vQnJE3uAItSdqFbjbwHMgITRfWLnssiT7MLWzTz3n6nBedGTFFC1EA.webp"
+                        alt=""></div>
             </div>
         </section>
 
         <!-- About 미리보기 -->
         <section id="about" class="section container">
+            <!-- 파티클 배경 -->
+            <canvas id="particles-about" class="particles-bg" aria-hidden="true"></canvas>
+
             <div class="section__head">
                 <h2>About</h2>
                 <a class="link" href="pages/about.html">자세히 보기 →</a>
@@ -101,6 +123,9 @@
 
         <!-- Featured Projects -->
         <section id="projects" class="section container">
+            <!-- 파티클 배경 -->
+            <canvas id="particles-projects" class="particles-bg" aria-hidden="true"></canvas>
+
             <div class="section__head">
                 <h2>Featured Projects</h2>
                 <a class="link" href="pages/projects.html">모두 보기 →</a>

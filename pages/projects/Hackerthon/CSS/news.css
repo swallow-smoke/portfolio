@@ -1,0 +1,155 @@
+/* 전체 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333333;
+}
+
+body {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  /* 고정된 상단바 높이만큼 패딩 추가 */
+  padding-top: 65px; /* 상단바 높이(약 45px 로고 + 위아래 패딩 10px*2 = 65px) */
+}
+
+/* 상단 네비게이션 - 다른 페이지와 동일하게 변경 및 위치 고정 */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgb(141, 36, 122) 100%);
+  border: 1px solid #ddd;
+  /* 위치 고정 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* 다른 요소 위에 표시되도록 */
+}
+
+/* 로고 스타일 - 다른 페이지와 동일하게 변경 */
+.logo {
+  height: 45px; /* 사용자가 제시한 45px로 변경 */
+}
+
+/* 내비게이션 링크 컨테이너 */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* 내비게이션 링크 스타일 - 글자색 흰색으로 변경 */
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white; /* ⭐️ 글자색 흰색으로 변경 */
+  font-weight: bold;
+  position: relative;
+  transition: 0.4s;
+}
+
+/* 내비게이션 링크 호버 스타일 (기존과 동일) */
+.nav-links a:hover {
+  color: red;
+}
+
+/* 나머지 뉴스 페이지 섹션 스타일은 유지 */
+.newslogo {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5em;
+  color: #333;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  flex: 1; /* 메인 콘텐츠 영역이 남은 공간을 채우도록 */
+  overflow-y: auto; /* 내용이 넘칠 경우 스크롤 */
+}
+
+.news {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.news a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.news a:hover {
+  transform: translateY(-5px);
+}
+
+.news img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.news div {
+  padding: 15px;
+  background-color: #f9f9f9;
+  flex-grow: 1;
+}
+
+.news p {
+  font-size: 1em;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 992px) {
+  .news {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+    font-size: 0.9em;
+  }
+
+  .news {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .newslogo {
+    font-size: 2em;
+  }
+}
