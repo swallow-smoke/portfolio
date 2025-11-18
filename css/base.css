@@ -6,7 +6,6 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.6;
   color: var(--text);
-  padding-top: 64px;      /* 🔥 헤더 높이( header__inner 높이와 맞추기 ) */
 }
 
 /* 고정 헤더 높이만큼 앵커 오프셋 */
