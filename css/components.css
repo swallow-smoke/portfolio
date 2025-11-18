@@ -190,11 +190,13 @@ p {
 
 /* Header / Nav */
 .site-header {
-    position: sticky;
+    position: fixed;              /* 🔥 sticky → fixed */
     top: 0;
-    z-index: 50;
+    left: 0;
+    right: 0;
+    z-index: 100;                 /* 다른 것들보다 위에 */
     backdrop-filter: saturate(140%) blur(8px);
-    background: color-mix(in oklab, var(--bg) 70%, transparent);
+    background: color-mix(in oklab, var(--bg) 85%, transparent);
     border-bottom: 1px solid var(--border);
 }
 
@@ -202,7 +204,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 64px;                 /* 헤더 높이 통일 (필요하면 숫자만 조절) */
     gap: 16px;
 }
 
