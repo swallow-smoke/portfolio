@@ -78,34 +78,48 @@ h1, h2, h3 {
 }
 
 .skill-card {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #2c2c2c, #2575fc);
   border-radius: 50%;
-  width: 150px; /* 카드 크기 고정 */
-  height: 150px; /* 카드 크기 고정 */
+  width: 150px;
+  height: 150px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: white;
+  color: #fff;
   font-family: Arial, sans-serif;
-  text-align: center; /* 텍스트 중앙 정렬 */
-  overflow: hidden; /* 카드 안에서 글자가 벗어나지 않도록 설정 */
+  font-weight: bold;
+  text-align: center;
+  overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .skill-card:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 6px 10px rgba(116, 116, 116, 0.2);
 }
 
+/* 아이콘 영역 */
 .skill-icon {
-  font-size: 2.5rem; /* 아이콘 크기 */
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 아이콘과 텍스트 사이 여백만 남기고, 위 여백은 카드 자체 정렬로 해결 */
+  margin-bottom: 8px;
 }
 
+/* 🔥 이미지 사이즈 통일 */
+.skill-icon img {
+  width: 72px;          /* 공통 크기 (필요하면 64, 80 등으로 조절) */
+  height: 72px;
+  object-fit: contain;  /* 비율 유지 */
+  display: block;
+}
+
+/* 텍스트 */
 .skill-card p {
-  font-size: 0.9rem; /* 글자 크기 조정 */
+  font-size: 0.9rem;
   margin: 0;
-  word-wrap: break-word; /* 긴 단어를 자동으로 줄바꿈 */
+  word-wrap: break-word;
 }
