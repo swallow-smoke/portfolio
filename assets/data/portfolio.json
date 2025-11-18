@@ -4,15 +4,9 @@
         "title": "DJMAX",
         "subtitle": "리듬게임 팬 페이지 / 포트폴리오",
         "year": 2025,
-        "category": [
+        "tags": [
             "GAME",
             "Web"
-        ],
-        "tags": [
-            "게임 소개",
-            "리듬",
-            "UI",
-            "반응형"
         ],
         "description": "DJMAX 관련 콘텐츠를 큐레이션하고 인터랙션을 실험한 프로젝트. \n반응형 레이아웃과 애니메이션을 적용해 시각적 몰입감을 높였습니다.\nTic! Tac! Toe! 라는 DJMAX의 노래를 디자인 레퍼런스로 삼아 제작하였습니다",
         "demo": [
@@ -30,11 +24,9 @@
         "title": "Satisfactory",
         "subtitle": "공장 자동화 게임 팬 페이지",
         "year": 2025,
-        "category": "Web",
         "tags": [
-            "시각화",
-            "게임 소개",
-            "Website"
+            "GAME",
+            "Web"
         ],
         "description": "Satisfactory 게임을 주제로 한 웹페이지, 게임의 전체적인 소개를 표현하였습니다.",
         "demo": [
@@ -52,15 +44,9 @@
         "title": "COOLPATH - SDHS 2025 HACKERTHON",
         "subtitle": "해커톤 COOLPATH팀의 서비스 프로토타입",
         "year": 2025,
-        "category": [
+        "tags": [
             "Web",
             "Competition"
-        ],
-        "tags": [
-            "해커톤",
-            "프로토타입",
-            "협업",
-            "IndexDB"
         ],
         "description": "단기간에 기획-디자인-개발을 연결한 팀 프로젝트. \n네이버 API를 활용해 실제 장소를 지도형태로 시각화하고, \nIndexDB를 이용해 별점 기능을 임시적으로 구현하였습니다.\n또한 공공데이터포털API를 활용하여 실제 장소의 온도정보를 가져와 현재 상태를 알아볼 수 있도록 하였습니다.",
         "demo": [
@@ -95,14 +81,10 @@
         "title": "To Teacher",
         "subtitle": "교생 선생님을 위해서 만들었던 웹사이트",
         "year": 2025,
-        "category": "Web",
         "tags": [
-            "프로토타입",
-            "시각화",
-            "Website",
-            "JavaScript"
+            "Web"
         ],
-        "description": "교생선생님이 학교에서 떠나시기전에 학생들이 만들어드린 웹사이트입니다.",
+        "description": "학기초 JS 연습용.\n교생선생님이 학교에서 떠나시기전에 학생들이 만들어드린 웹사이트입니다.",
         "authors": [
             "안드레",
             "이준호",
@@ -142,13 +124,9 @@
         "title": "Irin Discord Bot",
         "subtitle": "디스코드 봇 제작",
         "year": 2024,
-        "category": "Discord",
         "tags": [
-            "디스코드",
-            "협업",
-            "MongoDB",
-            "Node.js",
-            "JavaScript"
+            "Discord",
+            "Backend"
         ],
         "description": "유튜버 '이린'의 디스코드 서버에서 사용되는 봇을 제작하였습니다.\nMongoDB를 활용하여 사용자 데이터를 저장하고 다양한 명령어와 기능을 구현하였습니다.\n현재 실제로 사용되는 봇으로, 일 평균 이용자수 10 ~ 20명 정도의 사용량을 가지고 있습니다.",
         "links": {
@@ -196,12 +174,9 @@
         "title": "PROJECT YH",
         "subtitle": "리듬게임 PROJECT YH 제작",
         "year": 2025,
-        "category": "GAME",
         "tags": [
-            "게임 제작",
-            "리듬",
-            "Unity",
-            "C#"
+            "GAME",
+            "Unity"
         ],
         "description": "Unity 엔진을 사용하여 개발중인 리듬게임 프로젝트입니다. \n다양한 음악과 난이도를 제공하며,\n유저들간의 온라인 경쟁 기능을 포함하여 몰입감 있는 게임 경험을 제공합니다.\n유저들이 직접 레벨을 만들어 배포할 수 있는 기능도 포함하고 있습니다.",
         "authors": [
@@ -235,12 +210,10 @@
         "title": "PROJECT Sephiroth",
         "subtitle": "플랫포머 게임 PROJECT Sephiroth 제작",
         "year": 2025,
-        "category": "GAME",
         "tags": [
-            "게임 제작",
-            "플랫포머",
-            "Unity",
-            "C#"
+            "GAME",
+            "Platformer",
+            "Unity"
         ],
         "description": "Unity 엔진을 사용하여 개발중인 플랫포머 게임 프로젝트입니다. \n다양한 스테이지와 도전 과제를 제공하며, 보스전 및 업그레이드 시스템을 포함하여 흥미진진한 게임 경험을 제공합니다.",
         "authors": [
@@ -342,12 +315,9 @@
         "title": "Circles in ruin",
         "subtitle": "리듬게임 BGA 제작",
         "year": 2025,
-        "category": ["BGA", "GAME"],
         "tags": [
-            "BGA 제작",
-            "리듬",
-            "ADOFAI",
-            "Unity"
+            "BGA",
+            "GAME"
         ],
         "description": "리듬게임 A Dance of Fire and Ice의 커스텀 스테이지 'Circles in ruin'의 BGA를 제작하였습니다.",
         "authors": [
@@ -387,14 +357,9 @@
         "title": "The Univercial Forum Management",
         "subtitle": "TUF 포럼의 관리",
         "year": 2023,
-        "category": [
-            "GAME",
-            "Management"
-        ],
         "tags": [
-            "서버 관리",
-            "ADOFAI",
-            "Website"
+            "Management",
+            "Web"
         ],
         "demo": [
             {"label": "Discord", "url": "https://discord.gg/JWkvfH3Dwm"},
@@ -418,14 +383,9 @@
         "title": "ARES Management",
         "subtitle": "ARES 포럼의 관리",
         "year": 2023,
-        "category": [
-            "GAME",
-            "Management"
-        ],
         "tags": [
-            "서버 관리",
-            "GAME",
-            "ADOFAI"
+            "Management",
+            "GAME"
         ],
         "description": "리듬 게임 A Dance of Fire and Ice의 유저 포럼 ARES입니다.\n해당 포럼은 Discord로 운영되며, \nVFX를 주제로 하여 에셋 공유, 레벨 공유, 토론등 다양한 활동이 이루어지고 있습니다.\nVFX의 실력을 '랭크'라는 형태로 나누어 실력별로 피드백을 받고 기타 중소 팀에서 활용할 수 있게끔 하고 있습니다.\n현재 약 560명 정도의 VFXer가 활동하고 있습니다.",
         "image": "./images/ARES.PNG",
@@ -462,18 +422,13 @@
     },
     {
         "id": "ADOFAIGG",
-        "category": [
-            "GAME",
-            "Management"
-        ],
         "title": "ADOFAI GG Management",
         "subtitle": "ADOFAI GG 포럼의 관리",
         "year": 2023,
         "description": "리듬게임 A Dance of Fire and Ice의 유저 포럼 ADOFAI GG의 관리를 하고 있습니다.\n해당 포럼은 Discord와 웹사이트로 운영되며, \n레벨 공유, 토론, AWC 개최등 다양한 활동이 이루어지고 있습니다.\n현재 약 2만명 정도의 유저가 활동하고 있습니다. \n 또한 ADOFAI GG는 ADOFAI 관련 최대 커뮤니티라고 할 수 있습니다.\n매년 AWC(ADOFAI World Cup)라는 대회를 개최하여 전세계에 있는 유저들이 참가하여 서로의 실력을 겨루는 대회를 개최하고 있습니다.",
         "tags": [
-            "서버 관리",
-            "GAME",
-            "ADOFAI"
+            "Management",
+            "GAME"
         ],
         "authors": [
             {
@@ -582,10 +537,9 @@
     },
     {
         "id": "Mod",
-        "category": [
+        "tags": [
             "GAME",
-            "Modding",
-            "ADOFAI"
+            "Modding"
         ],
         "title": "ADOFAI Editor Helper",
         "subtitle": "ADOFAI Modding",

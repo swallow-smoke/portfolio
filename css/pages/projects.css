@@ -160,3 +160,14 @@ mark {
 }
 
 #filters { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.selected-tags {
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.selected-tags .tag {
+  display: inline-block;
+  margin-right: 4px;
+  margin-bottom: 4px;
+}

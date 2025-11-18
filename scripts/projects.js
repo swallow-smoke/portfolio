@@ -66,7 +66,16 @@
   }
 
   // ---------- DOM refs ----------
-  const els = { grid:null, empty:null, count:null, q:null, clear:null, filters:null };
+  const els = {
+    grid: null,
+    empty: null,
+    count: null,
+    q: null,
+    clear: null,
+    filters: null,
+    clearTags: null,   // 🔥 추가
+    selectedTags: null,
+  };
 
   // ---------- Modal ----------
   const modal = { root:null, title:null, subtitle:null, chips:null, desc:null, authors:null, actions:null, thumb:null, closeBtn:null, overlay:null };
@@ -187,6 +196,7 @@
         selected.has(tag) ? selected.delete(tag) : selected.add(tag);
         filterAndRender(els.q?.value || '');
         writeURL();
+        renderSelectedTags();      // 🔥 추가
       });
       els.filters.appendChild(chip);
     });
@@ -231,6 +241,7 @@
     const tags = (sp.get('tags') || '').split(',').filter(Boolean);
     selected.clear(); tags.forEach(t=>selected.add(t));
     if (els.q) els.q.value = q;
+    renderSelectedTags();          // 🔥 추가
   }
   function writeURL(){
     const sp = new URLSearchParams();
@@ -259,18 +270,49 @@
       els.q.addEventListener('input', onInput);
     }
     if (els.clear){
-      els.clear.addEventListener('click', ()=>{ if (!els.q) return; els.q.value = ''; writeURL(); filterAndRender(''); els.q.focus(); });
+      els.clear.addEventListener('click', ()=> {
+        if (!els.q) return;
+        els.q.value = '';
+        writeURL();
+        filterAndRender('');
+        els.q.focus();
+      });
+    }
+
+    // 🔥 태그 전체 해제 버튼
+    if (els.clearTags) {
+      els.clearTags.addEventListener('click', () => {
+        selected.clear();                // 선택된 태그 모두 제거
+        buildChips();                    // chips UI 다시 그림 (is-active 제거)
+        writeURL();                      // URL 파라미터 갱신
+        filterAndRender(els.q?.value || ''); // 현재 검색어 기준으로 목록 다시 필터링
+        renderSelectedTags();      // 🔥 추가
+      });
     }
   }
 
+  function renderSelectedTags(){
+    if (!els.selectedTags) return;
+    if (!selected.size){
+      els.selectedTags.textContent = '';  // 아무 것도 선택 안 했을 때는 숨기거나 비우기
+      return;
+    }
+    const tags = Array.from(selected).sort((a,b)=>a.localeCompare(b));
+    els.selectedTags.innerHTML =
+      `선택된 태그: ` +
+      tags.map(t => `<span class="tag">${escape(t)}</span>`).join(' ');
+  }
+
   // ---------- Init ----------
-  document.addEventListener('DOMContentLoaded', async ()=>{
-    els.grid = document.getElementById('project-grid') || document.querySelector('#projects .grid');
-    els.empty = document.getElementById('empty');
-    els.count = document.getElementById('count');
-    els.filters = document.getElementById('filters');
-    els.q = document.getElementById('q');
-    els.clear = document.getElementById('clear');
+  document.addEventListener('DOMContentLoaded', async ()=> {
+    els.grid   = document.getElementById('project-grid') || document.querySelector('#projects .grid');
+    els.empty  = document.getElementById('empty');
+    els.count  = document.getElementById('count');
+    els.filters= document.getElementById('filters');
+    els.q      = document.getElementById('q');
+    els.clear  = document.getElementById('clear');
+    els.clearTags = document.getElementById('clear-tags'); // 🔥 추가
+    els.selectedTags= document.getElementById('selected-tags'); // 🔥 추가
 
     ensureModal(); bindModalDom();
 
