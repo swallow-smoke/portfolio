@@ -1,6 +1,10 @@
 /* components.css */
 
 /* Button styles */
+*body {
+    margin: 0;
+    padding: 0;
+}
 .btn {
     display: inline-flex;
     align-items: center;
