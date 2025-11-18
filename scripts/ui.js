@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
   function setTheme(theme){
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem(STORE_KEY, theme);
-    // 테마 변경 이벤트(파티클 등에서 사용)
     window.dispatchEvent(new CustomEvent('themechange', { detail: { theme } }));
   }
   function initTheme(){

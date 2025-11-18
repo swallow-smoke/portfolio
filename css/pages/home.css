@@ -6,10 +6,8 @@ body {
 }
 
 .header {
-    background: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
+    background: var(--bg);
+    color: var(--text);
 }
 
 .hero {
@@ -85,13 +83,8 @@ body {
 }
 
 .footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    background: var(--bg);
+    color: var(--muted);
 }
 
 /* 히어로 칩 */

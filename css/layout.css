@@ -5,8 +5,8 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: var(--bg);
+    color: var(--text);
     padding: 20px 0;
     text-align: center;
 }
@@ -16,7 +16,7 @@ nav {
 }
 
 nav a {
-    color: #fff;
+    color: var(--text);
     text-decoration: none;
     margin: 0 15px;
 }
@@ -30,8 +30,8 @@ main {
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background: var(--bg);
+    color: var(--muted);
     text-align: center;
     padding: 10px 0;
     position: relative;
@@ -81,8 +81,8 @@ footer {
 }
 
 .card {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 5px;
     padding: 15px;
     text-align: center;
@@ -98,5 +98,5 @@ footer {
 }
 
 .card p {
-    color: #666;
+    color: var(--muted);
 }

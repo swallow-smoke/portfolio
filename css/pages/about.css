@@ -1,6 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    /* 폰트/배경은 base/theme에서 처리 */
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -13,7 +12,7 @@ body {
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: var(--text);
 }
 
 .about-header {
@@ -22,10 +21,11 @@ h1, h2, h3 {
 }
 
 .about-content {
-    background: #fff;
-    padding: 20px;
+    background: var(--card);
+    color: var(--text);
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
+    padding: 20px;
 }
 
 .about-content p {
@@ -42,8 +42,8 @@ h1, h2, h3 {
     text-align: center;
     margin-top: 20px;
     padding: 10px 0;
-    background: #333;
-    color: #fff;
+    background: var(--bg);
+    color: var(--muted);
 }
 
 .prose {
