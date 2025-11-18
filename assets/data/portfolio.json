@@ -5,7 +5,6 @@
         "subtitle": "리듬게임 팬 페이지 / 포트폴리오",
         "year": 2025,
         "category": [
-            "Visualization",
             "GAME",
             "Web"
         ],
@@ -31,7 +30,7 @@
         "title": "Satisfactory",
         "subtitle": "공장 자동화 게임 팬 페이지",
         "year": 2025,
-        "category": "Visualization",
+        "category": "Web",
         "tags": [
             "시각화",
             "게임 소개",
@@ -55,8 +54,7 @@
         "year": 2025,
         "category": [
             "Web",
-            "Hackathon",
-            "Visualization"
+            "Competition"
         ],
         "tags": [
             "해커톤",
@@ -144,7 +142,7 @@
         "title": "Irin Discord Bot",
         "subtitle": "디스코드 봇 제작",
         "year": 2024,
-        "category": "Bot",
+        "category": "Discord",
         "tags": [
             "디스코드",
             "협업",
@@ -344,7 +342,7 @@
         "title": "Circles in ruin",
         "subtitle": "리듬게임 BGA 제작",
         "year": 2025,
-        "category": ["BGA", "VFX", "GAME"],
+        "category": ["BGA", "GAME"],
         "tags": [
             "BGA 제작",
             "리듬",
@@ -391,7 +389,6 @@
         "year": 2023,
         "category": [
             "GAME",
-            "Web",
             "Management"
         ],
         "tags": [
