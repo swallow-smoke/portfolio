@@ -97,6 +97,7 @@
           <section class="modal__body">
             <div id="pm-desc" class="pm-desc"></div>
             <div id="pm-authors" class="pm-authors"></div>
+            <div id="pm-videos" class="pm-videos"></div> <!-- 🔥 추가 -->
           </section>
           <footer class="modal__footer" id="pm-actions"></footer>
         </div>
@@ -134,10 +135,11 @@
     modal.title.textContent = p.title || '';
     modal.subtitle.textContent = [p.subtitle, p.year ? `(${p.year})` : ''].filter(Boolean).join(' ');
     modal.chips.innerHTML = [...(p.category || []), ...(p.tags || [])].slice(0,12).map(t=>`<span class="chip">${escape(t)}</span>`).join('');
-    modal.desc.innerHTML = br(p.description || '설명이 없습니다.');
+    modal.desc.innerHTML = p.description ? br(p.description) : '<p class="muted">설명이 존재하지 않습니다.</p>';
     modal.thumb.innerHTML = p.image ? `<img src="${resolveImage(p.image)}" alt="${escape(p.title)} 이미지">` : '';
 
     renderAuthors(p);
+    renderVideos(p); // 🔥 추가
 
     modal.actions.innerHTML = '';
     (Array.isArray(p.demos) ? p.demos : p.demo || []).forEach(d=>{
@@ -171,6 +173,29 @@
       </ul>
       ${hiddenCount ? `<button class="btn btn-ghost btn-sm" data-more-authors="1" data-more-label="+ ${hiddenCount}명 더 보기" aria-expanded="false">+ ${hiddenCount}명 더 보기</button>` : ''}
     `;
+  }
+
+  function renderVideos(p) {
+    const container = document.getElementById('pm-videos');
+    if (!container) return;
+
+    // 비디오 배열이 없거나 비어 있으면 숨김 처리
+    if (!p.videos || !Array.isArray(p.videos) || p.videos.length === 0) {
+      container.hidden = true;
+      container.innerHTML = '';
+      return;
+    }
+
+    // 비디오 배열 렌더링
+    container.hidden = false;
+    container.innerHTML = p.videos
+      .map(video => `
+        <video controls>
+          <source src="${escape(video)}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `)
+      .join('');
   }
 
   // ---------- Grid + Filters ----------

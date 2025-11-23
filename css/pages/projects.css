@@ -135,6 +135,20 @@ mark {
 .pm-authors ul { margin: 0 0 8px; padding-left: 18px; color: var(--muted); }
 .pm-authors .btn-sm { padding: 6px 10px; font-size: .85rem; border-radius: 8px; }
 
+.pm-videos {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.pm-videos video {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  box-shadow: var(--shadow);
+}
+
 .modal__footer { padding: 12px 16px 16px; display:flex; flex-wrap:wrap; gap: 10px; border-top: 1px solid var(--border); }
 .modal__footer .btn { height: 36px; }
 
