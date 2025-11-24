@@ -85,6 +85,7 @@ html, body { background: var(--bg); color: var(--text); }
   background: color-mix(in oklab, var(--bg) 92%, transparent);
   backdrop-filter: saturate(120%) blur(6px);
   transition: box-shadow .15s ease, background .15s ease;
+  width: 100vw;
 }
 .nav__inner { height: 46px; display:flex; align-items:center; }
 .nav__list { display:flex; gap: 16px; list-style:none; padding:0; margin:0; }
