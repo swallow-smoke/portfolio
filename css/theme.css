@@ -77,7 +77,15 @@ html, body { background: var(--bg); color: var(--text); }
 .logo { font-weight: 800; letter-spacing:.2px; }
 .logo span { color: var(--primary); }
 .icon-btn { border:1px solid var(--border); background: var(--card); border-radius: 10px; height:36px; width: 44px; display:inline-grid; place-items:center; }
-.site-nav { border-bottom: 1px solid var(--border); background: var(--bg); }
+.site-nav {
+  position: sticky;
+  top: 58px;
+  z-index: 45;
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in oklab, var(--bg) 92%, transparent);
+  backdrop-filter: saturate(120%) blur(6px);
+  transition: box-shadow .15s ease, background .15s ease;
+}
 .nav__inner { height: 46px; display:flex; align-items:center; }
 .nav__list { display:flex; gap: 16px; list-style:none; padding:0; margin:0; }
 .nav__list a { padding: 8px 10px; border-radius: 8px; color: var(--muted); }
