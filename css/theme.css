@@ -6,9 +6,9 @@
 /* 다크(거의 블랙) */
 :root {
   --bg: #0a0a0b;
-  --bg-soft: #0d0d10;
+  --bg-soft: #3c3c4a;
   --card: #101014;
-  --border: #8f8fb4;
+  --border: #56566e;
   --text: #e9e7f2;
   --muted: #a19cb3;
 
