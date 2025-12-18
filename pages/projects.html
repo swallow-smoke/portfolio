@@ -65,14 +65,11 @@
           <span class="search__icon">🔎</span>
           <input id="q" type="search" placeholder="프로젝트 검색 (/, Ctrl+K)" autocomplete="off" />
           <button id="clear" class="search__clear" aria-label="clear">✕</button>
+          <!-- 태그 초기화 버튼: 검색창 옆으로 이동 -->
+          <button id="clear-tags" class="btn btn-ghost btn-sm" type="button" style="margin-left:8px;">태그 초기화</button>
         </div>
 
         <div class="chips" id="filters" aria-label="태그 필터"></div>
-
-        <!-- 🔥 태그 전체 해제 버튼 추가 -->
-        <button id="clear-tags" class="btn btn-ghost btn-sm" type="button">
-          태그 초기화
-        </button>
       </div>
 
       <!-- 🔥 여기 추가: 선택된 태그 표시 -->

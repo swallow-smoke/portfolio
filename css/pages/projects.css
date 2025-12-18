@@ -135,6 +135,28 @@ mark {
 .pm-authors ul { margin: 0 0 8px; padding-left: 18px; color: var(--muted); }
 .pm-authors .btn-sm { padding: 6px 10px; font-size: .85rem; border-radius: 8px; }
 
+/* Authors 링크: 버튼 형태 */
+.pm-authors .author-link-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--text);
+  font-size: .82rem;
+  line-height: 1;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.pm-authors .author-link-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+.pm-authors .author-link-btn:active {
+  transform: translateY(0);
+}
+
 .pm-videos {
   display: grid;
   gap: 16px;

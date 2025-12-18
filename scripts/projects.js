@@ -157,22 +157,86 @@
   function renderAuthors(p){
     const MAX = 2;
     const authors = Array.isArray(p.authors) ? p.authors : [];
-    if (!authors.length){ modal.authors.innerHTML=''; return; }
-    const toItem = (a)=> {
-      const name = escape(a?.name ?? a);
-      const role = a?.role ? ` - ${escape(a.role)}` : '';
-      let extra = '';
-      if (a?.github) extra = typeof a.github === 'string' ? ` <a href="${resolveLink(a.github)}" target="_blank" rel="noreferrer">GitHub</a>` : '';
-      return `${name}${role}${extra}`;
+    if (!authors.length){
+      modal.authors.innerHTML='';
+      return;
+    }
+
+    // DOM으로 새로 구성 (문자열 innerHTML 의존 제거)
+    modal.authors.innerHTML = '';
+
+    const title = document.createElement('h4');
+    title.textContent = 'Authors';
+    modal.authors.appendChild(title);
+
+    const list = document.createElement('ul');
+    list.id = 'pm-authors-list';
+    modal.authors.appendChild(list);
+
+    const getLinks = (author) => {
+      const links = [];
+      const github = author?.github;
+
+      if (typeof github === 'string' && github.trim()) {
+        links.push({ label: '프로필', url: github.trim() });
+      } else if (Array.isArray(github)) {
+        github.forEach((g) => {
+          if (!g || !g.url) return;
+          links.push({ label: g.label || '링크', url: g.url });
+        });
+      }
+
+      return links;
     };
+
+    authors.forEach((author, index) => {
+      const li = document.createElement('li');
+      if (index >= MAX) {
+        li.classList.add('is-hidden');
+        li.style.display = 'none';
+      }
+
+      const name = (author && typeof author === 'object') ? (author.name ?? '') : String(author ?? '');
+      const role = (author && typeof author === 'object') ? (author.role ?? '') : '';
+
+      // "사람 이름 - 했던 내용 (링크)" 형식
+      const text = document.createElement('span');
+      text.textContent = role ? `${name} - ${role}` : name;
+      li.appendChild(text);
+
+      const links = getLinks(author);
+      if (links.length) {
+        li.appendChild(document.createTextNode(' ('));
+
+        links.forEach((link, linkIndex) => {
+          if (linkIndex > 0) li.appendChild(document.createTextNode(' '));
+
+          const a = document.createElement('a');
+          a.className = 'author-link-btn';
+          a.href = resolveLink(link.url);
+          a.target = '_blank';
+          a.rel = 'noreferrer';
+          a.textContent = link.label;
+          li.appendChild(a);
+        });
+
+        li.appendChild(document.createTextNode(')'));
+      }
+
+      list.appendChild(li);
+    });
+
     const hiddenCount = Math.max(0, authors.length - MAX);
-    modal.authors.innerHTML = `
-      <h4>Authors</h4>
-      <ul id="pm-authors-list">
-        ${authors.map((a, i)=>`<li${i>=MAX?' class="is-hidden" style="display:none"':''}>${toItem(a)}</li>`).join('')}
-      </ul>
-      ${hiddenCount ? `<button class="btn btn-ghost btn-sm" data-more-authors="1" data-more-label="+ ${hiddenCount}명 더 보기" aria-expanded="false">+ ${hiddenCount}명 더 보기</button>` : ''}
-    `;
+    if (hiddenCount) {
+      const moreBtn = document.createElement('button');
+      moreBtn.type = 'button';
+      moreBtn.className = 'btn btn-ghost btn-sm';
+      moreBtn.setAttribute('data-more-authors', '1');
+      moreBtn.dataset.moreLabel = `+ ${hiddenCount}명 더 보기`;
+      moreBtn.setAttribute('aria-expanded', 'false');
+      moreBtn.textContent = `+ ${hiddenCount}명 더 보기`;
+      modal.authors.appendChild(moreBtn);
+    }
   }
 
   function renderVideos(p) {
