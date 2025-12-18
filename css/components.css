@@ -115,19 +115,24 @@
 
 /* Project card thumbnail: 16:10 고정 */
 .card__thumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;     /* 모든 카드 동일 비율 */
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--bg-soft);
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    /* 모든 카드 동일 비율 */
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-soft);
+    overflow: hidden;
 }
+
 .card__thumb img {
-  position: absolute; inset: 0;
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 /* Chips */
@@ -173,11 +178,13 @@
 
 /* Header / Nav */
 .site-header {
-    position: fixed;              /* 🔥 sticky → fixed */
+    position: fixed;
+    /* 🔥 sticky → fixed */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;                 /* 다른 것들보다 위에 */
+    z-index: 100;
+    /* 다른 것들보다 위에 */
     backdrop-filter: saturate(140%) blur(8px);
     background: color-mix(in oklab, var(--bg) 85%, transparent);
     border-bottom: 1px solid var(--border);
@@ -187,7 +194,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;                 /* 헤더 높이 통일 (필요하면 숫자만 조절) */
+    height: 64px;
+    /* 헤더 높이 통일 (필요하면 숫자만 조절) */
     gap: 16px;
 }
 
@@ -332,17 +340,20 @@
     position: relative;
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 1; /* 정사각형 비율 유지 */
+    aspect-ratio: 1;
+    /* 정사각형 비율 유지 */
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 50%; /* 원형으로 만들기 */
+    border-radius: 50%;
+    /* 원형으로 만들기 */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero__blob img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 이미지가 영역에 맞게 채워지도록 설정 */
+    object-fit: cover;
+    /* 이미지가 영역에 맞게 채워지도록 설정 */
     animation: blobAnimation 8s infinite alternate ease-in-out;
 }
 
@@ -351,25 +362,63 @@
     0% {
         transform: scale(1) rotate(0deg);
     }
+
     50% {
         transform: scale(1.1) rotate(15deg);
     }
+
     100% {
         transform: scale(1) rotate(-15deg);
     }
 }
 
 /* Modal styles */
-.modal[aria-hidden="true"] { display: none; }
-.modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; }
-.modal__overlay { position:absolute; inset:0; background: rgba(0,0,0,.6); backdrop-filter: blur(2px); }
-.modal__dialog {
-  position: relative; width: min(860px, 92%); max-height: 86vh; overflow: auto;
-  background: var(--card); border: 1px solid var(--border); border-radius: 16px; box-shadow: var(--shadow);
-  animation: modalIn var(--dur) var(--ease-spring-1);
+.modal[aria-hidden="true"] {
+    display: none;
 }
-@keyframes modalIn { from { transform: translateY(8px) scale(.98); opacity: .85; } to { transform:none; opacity:1; } }
-.modal__close:hover { transform: scale(1.05); }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: grid;
+    place-items: center;
+}
+
+.modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .6);
+    backdrop-filter: blur(2px);
+}
+
+.modal__dialog {
+    position: relative;
+    width: min(860px, 92%);
+    max-height: 86vh;
+    overflow: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    animation: modalIn var(--dur) var(--ease-spring-1);
+}
+
+@keyframes modalIn {
+    from {
+        transform: translateY(8px) scale(.98);
+        opacity: .85;
+    }
+
+    to {
+        transform: none;
+        opacity: 1;
+    }
+}
+
+.modal__close:hover {
+    transform: scale(1.05);
+}
 
 .particles-bg {
     position: absolute;
@@ -383,16 +432,168 @@
 }
 
 @keyframes fadeInOut {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.3;
     }
+
     50% {
         opacity: 0.7;
     }
 }
 
 /* 섹션에 상대적 위치 지정 */
-#about, #projects {
+#about,
+#projects {
     position: relative;
     overflow: hidden;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    margin: 16px 0 40px;     /* 헤더 아래 간격 적당히 */
+    padding-left: 24px;
+    border-left: 2px solid color-mix(in oklab, var(--border) 70%, var(--primary) 30%);
+    top: auto;               /* 🔧 잘못 들어간 offset 제거 (기존 50px) */
+}
+
+/* 그라디언트 라인 */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(
+        to bottom,
+        rgba(124, 58, 237, 0) 0%,
+        rgba(124, 58, 237, 0.55) 20%,
+        rgba(96, 165, 250, 0.3) 60%,
+        rgba(124, 58, 237, 0) 100%
+    );
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.timeline__item {
+    position: relative;
+    margin-bottom: 26px;
+    padding-left: 10px;
+    animation: fadeInUp 0.32s var(--ease-out-2) both;
+}
+
+/* 카드 */
+.timeline__content {
+    position: relative;
+    padding: 10px 14px 12px;
+    border-radius: 12px;
+    background: color-mix(in oklab, var(--card) 92%, #000 8%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .35);
+    border: 1px solid color-mix(in oklab, var(--border) 80%, var(--primary) 20%);
+    backdrop-filter: blur(8px);
+}
+
+/* 점 + 아우라 */
+.timeline__dot {
+    position: absolute;
+    left: -15px;
+    top: 14px;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: var(--primary);
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.35),
+        0 0 12px rgba(129, 140, 248, 0.7);
+}
+
+/* 점에서 카드로 이어지는 선 */
+.timeline__dot::after {
+    content: "";
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    width: 10px;
+    height: 1px;
+    background: color-mix(in oklab, var(--primary) 40%, var(--border) 60%);
+    transform: translateY(-50%);
+    opacity: .9;
+}
+
+.timeline__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.timeline__year { font-weight: 700; font-size: 0.95rem; color: #e5e1ff; }
+.timeline__subtitle { font-size: 0.85rem; color: var(--muted); }
+.timeline__title { font-size: 1.05rem; margin: 0 0 4px; }
+.timeline__details { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+/* 모바일 간격 조정 */
+@media (max-width: 640px) {
+    .timeline {
+        margin: 12px 0 28px;
+        padding-left: 20px;
+    }
+    .timeline__item { margin-bottom: 20px; }
+}
+
+.timeline {
+    position: relative;
+    margin: 32px 0;
+    padding-left: 16px;
+    border-left: 2px solid var(--border, rgba(148, 163, 184, 0.5));
+}
+
+.timeline__item {
+    position: relative;
+    margin-bottom: 24px;
+    padding-left: 16px;
+}
+
+.timeline__dot {
+    position: absolute;
+    left: -11px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 999px;
+    background: var(--primary, #6366f1);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.timeline__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 4px;
+}
+
+.timeline__year {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.timeline__subtitle {
+    font-size: 0.85rem;
+    color: var(--muted, #94a3b8);
+}
+
+.timeline__title {
+    font-size: 1.05rem;
+    margin: 0 0 4px;
+}
+
+.timeline__details {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted, #94a3b8);
 }

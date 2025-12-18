@@ -1,0 +1,32 @@
+[
+    {
+        "year": "2023",
+        "title": "커뮤니티 매니지먼트 시작",
+        "subtitle": "첫 프로젝트 - Community Management",
+        "details": "리듬게임 A Dance of Fire and Ice 관련 커뮤니티에서 활동을 시작하고, 운영과 관리 업무를 맡기 시작했습니다. <br>이후 여러 포럼과 디스코드 서버 관리로 영역을 넓혀 갔습니다."
+    },
+    {
+        "year": "2023",
+        "title": "ADOFAI GG 관리 및 대회 운영",
+        "subtitle": "ADOFAI GG 관리자 · AWC 운영",
+        "details": "ADOFAI 관련 최대 커뮤니티인 ADOFAI GG에서 관리자로 활동하며, AWC(ADOFAI World Cup) 등 대형 대회 운영에 참여했습니다. <br>커뮤니티 관리와 대회 운영 경험을 본격적으로 쌓기 시작한 시기입니다."
+    },
+    {
+        "year": "2024",
+        "title": "Irin Discord Bot 개발",
+        "subtitle": "Discord Bot Backend 개발",
+        "details": "유튜버 '이린' 디스코드 서버에서 사용하는 봇을 개발했습니다. <br>MongoDB로 유저 데이터를 저장하고, 사냥·낚시 등 미니게임과 경제 시스템을 설계·구현하며 실제 운영 중인 봇을 유지보수하고 있습니다."
+    },
+    {
+        "year": "2025",
+        "title": "PROJECT YH 기획 및 QA",
+        "subtitle": "리듬게임 PROJECT YH",
+        "details": "Unity 기반 리듬게임 PROJECT YH에서 기획과 QA를 담당했습니다. <br>다양한 음악과 난이도, 온라인 경쟁 기능을 포함하는 게임으로, 시스템 설계와 품질 검수 경험을 쌓았습니다."
+    },
+    {
+        "year": "2025",
+        "title": "PROJECT Sephiroth 개발",
+        "subtitle": "플랫포머 게임 팀장 · 프로그래머",
+        "details": "Unity로 개발 중인 플랫포머 게임 PROJECT Sephiroth의 팀장으로, 기획과 프로그래밍, 디렉팅을 맡았습니다. <br>스테이지 구성, 보스전, 업그레이드 시스템 등을 포함한 기획과 팀 단위 개발을 경험했습니다."
+    }
+]
