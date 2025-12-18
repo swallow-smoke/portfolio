@@ -10,6 +10,10 @@ body {
     color: var(--text);
 }
 
+.container {
+    top: 150px;
+}
+
 .hero {
     background-image: url('../images/hero/hero-image.jpg');
     background-size: cover;
