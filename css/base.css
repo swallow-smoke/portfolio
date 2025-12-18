@@ -6,11 +6,11 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
   line-height: 1.6;
   color: var(--text);
-  padding-top: 64px;      /* 🔥 헤더 높이( header__inner 높이와 맞추기 ) */
+    padding-top: var(--topbar-offset, 110px);
 }
 
 /* 고정 헤더 높이만큼 앵커 오프셋 */
-[id] { scroll-margin-top: 76px; }
+[id] { scroll-margin-top: calc(var(--topbar-offset, 110px) + 12px); }
 
 a { 
   color: inherit; 
@@ -102,6 +102,9 @@ img {
 }
 
 :root{
+    --header-h: 64px;
+    --nav-h: 46px;
+    --topbar-offset: calc(var(--header-h) + var(--nav-h));
   --ease-out-2: cubic-bezier(.22,1,.36,1);
   --ease-spring-1: cubic-bezier(.16,1,.3,1);
   --dur-fast: .18s;

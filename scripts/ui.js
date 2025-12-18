@@ -75,8 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const hash = location.hash || '#intro';
     document.querySelectorAll('.header-nav a, .nav__list a').forEach(a=>{
       const href = a.getAttribute('href') || '';
-      const isAnchor = href.startsWith('/index.html#') || href.startsWith('#');
-      const active = isAnchor ? href.endsWith(hash) : location.pathname.endsWith(href.split('/').pop()||'');
+      const isAnchor = href.includes('#');
+      const active = isAnchor
+        ? href.endsWith(hash)
+        : location.pathname.endsWith(href.split('/').pop()||'');
       a.classList.toggle('is-active', active);
     });
   }

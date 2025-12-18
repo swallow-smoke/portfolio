@@ -52,7 +52,7 @@
         "demo": [
             {
                 "label": "Prototype",
-                "url": "pages/projects/Hackerthon/main.html"
+                "url": "pages/projects/Hackerthon/index.html"
             }
         ],
         "image": "./images/COOLPATH.PNG",

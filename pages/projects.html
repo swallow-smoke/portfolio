@@ -56,7 +56,7 @@
   <main>
     <section id="projects" class="section container">
       <div class="section__head">
-        <h2>Projects <span class="muted">(<span id="count">0</span>)</span></h2>
+        <h2>Projects <span class="muted">(<span data-count>0</span>)</span></h2>
       </div>
 
       <div class="toolbar">
@@ -77,7 +77,7 @@
       </div>
 
       <div class="projects__meta">
-        <span id="count">0</span>건 결과
+        <span data-count>0</span>건 결과
       </div>
 
       <div id="project-grid" class="grid grid-3"></div>
@@ -107,6 +107,8 @@
       <section class="modal__body">
         <div id="pm-desc" class="pm-desc"></div>
         <div id="pm-authors" class="pm-authors"></div>
+
+        <div id="pm-gallery" class="pm-gallery" hidden></div>
 
         <div id="pm-videos" class="pm-videos"></div>
       </section>

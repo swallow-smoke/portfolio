@@ -45,7 +45,34 @@
       if (typeof p.authors === 'string') authors = [{ name: p.authors }];
       else if (Array.isArray(p.authors)) authors = p.authors.map(a => typeof a === 'string' ? ({ name: a }) : a);
 
-      return { id, title, subtitle, year, category, tags, image, color, description, demos, authors, raw: p };
+      // images: string | {src|url|path, alt} | array
+      const rawImages = p.images ?? p.gallery ?? p.photos;
+      const imagesArr = Array.isArray(rawImages) ? rawImages : (typeof rawImages === 'string' ? [rawImages] : []);
+      const images = imagesArr
+        .map(img => {
+          if (typeof img === 'string') return { src: img, alt: '' };
+          if (!img || typeof img !== 'object') return null;
+          return { src: img.src || img.url || img.path || '', alt: img.alt || img.title || '' };
+        })
+        .filter(img => img && img.src);
+
+      // videos: string | {src|url|path, title|label, poster, type} | array
+      const rawVideos = p.videos ?? p.video;
+      const videosArr = Array.isArray(rawVideos) ? rawVideos : (typeof rawVideos === 'string' ? [rawVideos] : []);
+      const videos = videosArr
+        .map(v => {
+          if (typeof v === 'string') return { src: v };
+          if (!v || typeof v !== 'object') return null;
+          return {
+            src: v.src || v.url || v.path || '',
+            title: v.title || v.label || '',
+            poster: v.poster || '',
+            type: v.type || '',
+          };
+        })
+        .filter(v => v && v.src);
+
+      return { id, title, subtitle, year, category, tags, image, color, description, demos, authors, images, videos, raw: p };
     });
   }
 
@@ -69,7 +96,7 @@
   const els = {
     grid: null,
     empty: null,
-    count: null,
+    counts: null,
     q: null,
     clear: null,
     filters: null,
@@ -97,6 +124,7 @@
           <section class="modal__body">
             <div id="pm-desc" class="pm-desc"></div>
             <div id="pm-authors" class="pm-authors"></div>
+            <div id="pm-gallery" class="pm-gallery" hidden></div>
             <div id="pm-videos" class="pm-videos"></div> <!-- 🔥 추가 -->
           </section>
           <footer class="modal__footer" id="pm-actions"></footer>
@@ -139,6 +167,7 @@
     modal.thumb.innerHTML = p.image ? `<img src="${resolveImage(p.image)}" alt="${escape(p.title)} 이미지">` : '';
 
     renderAuthors(p);
+    renderGallery(p);
     renderVideos(p); // 🔥 추가
 
     modal.actions.innerHTML = '';
@@ -243,23 +272,123 @@
     const container = document.getElementById('pm-videos');
     if (!container) return;
 
-    // 비디오 배열이 없거나 비어 있으면 숨김 처리
-    if (!p.videos || !Array.isArray(p.videos) || p.videos.length === 0) {
+    const list = Array.isArray(p?.videos) ? p.videos : [];
+    const valid = list.filter(v => v && v.src);
+    if (!valid.length) {
       container.hidden = true;
-      container.innerHTML = '';
+      container.textContent = '';
       return;
     }
 
-    // 비디오 배열 렌더링
+    const guessType = (src) => {
+      const clean = String(src || '').split('#')[0].split('?')[0];
+      const ext = (clean.split('.').pop() || '').toLowerCase();
+      if (ext === 'webm') return 'video/webm';
+      if (ext === 'ogv' || ext === 'ogg') return 'video/ogg';
+      if (ext === 'mov') return 'video/quicktime';
+      return 'video/mp4';
+    };
+
     container.hidden = false;
-    container.innerHTML = p.videos
-      .map(video => `
-        <video controls>
-          <source src="${escape(video)}" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      `)
-      .join('');
+    container.textContent = '';
+
+    const title = document.createElement('h4');
+    title.textContent = 'Video';
+    container.appendChild(title);
+
+    const grid = document.createElement('div');
+    grid.className = 'pm-videos__grid';
+    container.appendChild(grid);
+
+    valid.forEach((v) => {
+      const src = v?.src;
+      if (!src) return;
+
+      const item = document.createElement('div');
+      item.className = 'pm-video';
+
+      const video = document.createElement('video');
+      video.controls = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      if (v.poster) video.poster = resolveLink(v.poster);
+
+      const source = document.createElement('source');
+      source.src = resolveLink(src);
+      source.type = v.type || guessType(src);
+      video.appendChild(source);
+
+      item.appendChild(video);
+
+      if (v.title) {
+        const cap = document.createElement('div');
+        cap.className = 'pm-video__caption muted';
+        cap.textContent = v.title;
+        item.appendChild(cap);
+      }
+
+      grid.appendChild(item);
+    });
+  }
+
+  function renderGallery(p){
+    const container = document.getElementById('pm-gallery');
+    if (!container) return;
+
+    const imgs = Array.isArray(p?.images) ? p.images : [];
+    if (imgs.length < 2) {
+      container.hidden = true;
+      container.textContent = '';
+      return;
+    }
+
+    container.hidden = false;
+    container.textContent = '';
+
+    const wrap = document.createElement('div');
+    wrap.className = 'pm-gallery__wrap';
+
+    const prev = document.createElement('button');
+    prev.type = 'button';
+    prev.className = 'pm-gallery__btn pm-gallery__btn--prev';
+    prev.setAttribute('aria-label', '이전 이미지');
+    prev.textContent = '‹';
+
+    const next = document.createElement('button');
+    next.type = 'button';
+    next.className = 'pm-gallery__btn pm-gallery__btn--next';
+    next.setAttribute('aria-label', '다음 이미지');
+    next.textContent = '›';
+
+    const track = document.createElement('div');
+    track.className = 'pm-gallery__track';
+
+    const slides = imgs.map((img)=>{
+      const slide = document.createElement('div');
+      slide.className = 'pm-gallery__slide';
+
+      const el = document.createElement('img');
+      el.src = resolveImage(img.src);
+      el.alt = img.alt || `${p.title || ''} 이미지`;
+      el.loading = 'lazy';
+      slide.appendChild(el);
+      track.appendChild(slide);
+      return slide;
+    });
+
+    const go = (dir)=>{
+      const width = track.clientWidth || 1;
+      const idx = Math.round(track.scrollLeft / width);
+      const nextIdx = Math.min(slides.length - 1, Math.max(0, idx + dir));
+      slides[nextIdx]?.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+    };
+    prev.addEventListener('click', ()=>go(-1));
+    next.addEventListener('click', ()=>go(1));
+
+    wrap.appendChild(prev);
+    wrap.appendChild(track);
+    wrap.appendChild(next);
+    container.appendChild(wrap);
   }
 
   // ---------- Grid + Filters ----------
@@ -319,7 +448,9 @@
       return qHit && tHit;
     }).sort((a,b)=> (b.year||0)-(a.year||0) || a.title.localeCompare(b.title));
 
-    els.count && (els.count.textContent = String(items.length));
+    if (els.counts) {
+      els.counts.forEach((el) => { el.textContent = String(items.length); });
+    }
     els.empty && (els.empty.hidden = items.length !== 0);
     renderGrid(items);
   }
@@ -396,7 +527,7 @@
   document.addEventListener('DOMContentLoaded', async ()=> {
     els.grid   = document.getElementById('project-grid') || document.querySelector('#projects .grid');
     els.empty  = document.getElementById('empty');
-    els.count  = document.getElementById('count');
+    els.counts = Array.from(document.querySelectorAll('[data-count]'));
     els.filters= document.getElementById('filters');
     els.q      = document.getElementById('q');
     els.clear  = document.getElementById('clear');
