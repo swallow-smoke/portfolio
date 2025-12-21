@@ -597,3 +597,15 @@
     font-size: 0.9rem;
     color: var(--muted, #94a3b8);
 }
+
+#timeline .section__head {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#timeline .section__head .muted {
+    margin: 0;
+    max-width: 70ch;
+}
