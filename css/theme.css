@@ -71,6 +71,30 @@ html, body { background: var(--bg); color: var(--text); }
 .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top: 10px; }
 .tag { font-size: .78rem; padding: 4px 8px; border-radius: 999px; border:1px solid var(--border); background: var(--bg-soft); color: var(--muted); }
 
+/* Project cards: tags always bottom-left (grid only) */
+.grid .card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Featured projects cards are wrapped by an <a> */
+.grid .card > a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid .card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid .card__body .tags {
+  margin-top: auto;
+}
+
 /* Header / Nav / Footer */
 .site-header {
   position: fixed;
